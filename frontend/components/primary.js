@@ -6,20 +6,31 @@ import FeesForServicesPerformed from "./ContractSections/FeesForServicesPerforme
 import ObligationsOfTheClient from "./ContractSections/ObligationsOfTheClient";
 
 export default function Sidebar(props) {
+  
+  const monthNames = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+  ];
   let currentDate = new Date();
   const dd = String(currentDate.getDate()).padStart(2, "0");
   const mm = String(currentDate.getMonth() + 1).padStart(2, "0"); //January is 0!
   const yyyy = currentDate.getFullYear();
+  const currentMonth = monthNames[new Date().getMonth()];
 
   currentDate = mm + "/" + dd + "/" + yyyy;
-  const { businessName } = props;
+  
+  const { businessName, businessAddress, selectedServices } = props;
 
   return (
     <Col md={9} id="primary" className="pt-5">
       <h1 className="text-center mb-5">Service Agreement - {businessName}</h1>
       <div id="contract">
         <ol className="">
-          <IdentificationOfTheParties businessName={businessName} currentDate={currentDate} />
+          <IdentificationOfTheParties 
+            businessName={businessName} 
+            currentDate={currentDate} 
+            currentMonth={currentMonth}
+            businessAddress={businessAddress}
+            selectedServices={selectedServices} />
           <EngagementAndServices />
           <ServicePeriodAndTermination />
           <FeesForServicesPerformed />
