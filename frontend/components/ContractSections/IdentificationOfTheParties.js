@@ -9,16 +9,16 @@ export default function IdentificationOfTheParties(props) {
       <ol>
         <li>
           <p>
-            This Service Agreement (the ‘Agreement’) is made and entered into on
-            this {currentDate} day of {currentMonth} (the ‘Effective Date’) by
-            and between {businessName} with its registered address at {businessAddress} (the ‘Client’) and Intangible Media LLC
-            (the ‘Service Provider’).
+            This Service Agreement (the 'Agreement') is made and entered into on
+            this {currentDate} day of {currentMonth} (the 'Effective Date') by
+            and between {businessName} with its registered address at {businessAddress} (the 'Client') and Intangible Media LLC
+            (the 'Service Provider').
           </p>
         </li>
         <li>
           <p>
             The Client and the Service Provider are hereinafter referred to
-            individually as a ‘Party’ and collectively as the ‘Parties’.
+            individually as a 'Party' and collectively as the 'Parties'.
           </p>
         </li>
         <li>

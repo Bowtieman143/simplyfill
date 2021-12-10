@@ -19,16 +19,16 @@ export default function EngagementAndServices(props) {
           <li>
             <p>Website Development</p>
           </li>
-          <li>
-            <p>Google Adwords</p>
-          </li>
-          <li>
-            <p>Website Development</p>
-          </li>
-          <li>
-            <p>Website Development</p>
-          </li>
         </ol>
+        <li>
+          <p>
+            The Client hereby engages the Service Provider to provide and
+            perform the following Services on an ongoing basis, in terms of a
+            retainer arrangement OR to be billed on an hourly basis, in
+            connection with [insert name or description of project/business
+            operations]. These Services shall include the following
+          </p>
+        </li>
       </ol>
     </li>
   );
