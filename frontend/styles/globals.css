@@ -47,6 +47,12 @@ a {
   margin-bottom: 35px;
 }
 
+#primary #contract ol li ol li {
+  display: block;
+  position: relative;
+  margin-bottom: 15px;
+}
+
 #primary #contract ol li h4 {
   margin-bottom: 25px;
 }

@@ -1,4 +1,9 @@
 import { Col, Form, Row } from "react-bootstrap";
+import IdentificationOfTheParties from "./ContractSections/IdentificationOfTheParties";
+import EngagementAndServices from "./ContractSections/EngagementAndServices";
+import ServicePeriodAndTermination from "./ContractSections/ServicePeriodAndTermination";
+import FeesForServicesPerformed from "./ContractSections/FeesForServicesPerformed";
+import ObligationsOfTheClient from "./ContractSections/ObligationsOfTheClient";
 
 export default function Sidebar(props) {
   let currentDate = new Date();
@@ -14,63 +19,11 @@ export default function Sidebar(props) {
       <h1 className="text-center mb-5">Service Agreement - {businessName}</h1>
       <div id="contract">
         <ol className="">
-          <li>
-            <h4>IDENTIFICATION OF T HE PARTIES</h4>
-            <ol>
-              <li>
-                <p>
-                  This Service Agreement (the ‘Agreement’) is made and entered
-                  into on this {currentDate} day of [Current Month] (the
-                  ‘Effective Date’) by and between {businessName} with its
-                  registered address at [Client Company Address] (the ‘Client’)
-                  and Intangible Media LLC (the ‘Service Provider’).
-                </p>
-              </li>
-            </ol>
-          </li>
-          <li>
-            <h4>ENGAGEMENT AND SERVICES</h4>
-            <ol>
-              <li>
-                <p>
-                  This Service Agreement (the ‘Agreement’) is made and entered
-                  into on this {currentDate} day of [Current Month] (the
-                  ‘Effective Date’) by and between {businessName} with its
-                  registered address at [Client Company Address] (the ‘Client’)
-                  and Intangible Media LLC (the ‘Service Provider’).
-                </p>
-              </li>
-            </ol>
-          </li>
-          <li>
-            <h4>SERVICE PERIOD AND TERMINATION</h4>
-            <ol>
-              <li>
-                <p>
-                  This Service Agreement (the ‘Agreement’) is made and entered
-                  into on this {currentDate} day of [Current Month] (the
-                  ‘Effective Date’) by and between {businessName} with its
-                  registered address at [Client Company Address] (the ‘Client’)
-                  and Intangible Media LLC (the ‘Service Provider’).
-                </p>
-              </li>
-              <li>
-                <p>
-                  This Service Agreement (the ‘Agreement’) is made and entered
-                  into on this {currentDate} day of [Current Month] (the
-                  ‘Effective Date’) by and between {businessName} with its
-                  registered address at [Client Company Address] (the ‘Client’)
-                  and Intangible Media LLC (the ‘Service Provider’).
-                </p>
-              </li>
-            </ol>
-          </li>
-          <li>
-            <h4>FEES FOR SERVICES PERFORMED</h4>
-          </li>
-          <li>
-            <h4>OBLIGATIONS OF THE CLIENT</h4>
-          </li>
+          <IdentificationOfTheParties businessName={businessName} currentDate={currentDate} />
+          <EngagementAndServices />
+          <ServicePeriodAndTermination />
+          <FeesForServicesPerformed />
+          <ObligationsOfTheClient />
           <li>
             <h4>OWNERSHIP AND RISK</h4>
           </li>
@@ -78,9 +31,11 @@ export default function Sidebar(props) {
             <h4>CONFIDENTIALITY AND RESPONSIBILITY</h4>
           </li>
           <li>
+            <h4>NO COMPETITION</h4>
+          </li>
+          <li>
             <h4>WARRANTIES</h4>
           </li>
-
           <li>
             <h4>INDEPENDENT CONTRACTORS</h4>
           </li>
