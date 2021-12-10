@@ -65,3 +65,22 @@ a {
   top: 0px;
   left: -40px;
 }
+
+#sidebar .carousel.slide {
+  height: 90vh;
+  position: relative;
+}
+
+#sidebar .carousel-caption {
+  position: relative;
+}
+
+#sidebar .carousel-control-prev,
+#sidebar .carousel-control-next {
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 40px;
+  bottom: 0;
+  margin-top: auto;
+}
