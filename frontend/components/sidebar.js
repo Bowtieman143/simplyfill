@@ -76,11 +76,18 @@ export default function Sidebar(props) {
           <h5 className="">2. ENGAGEMENT AND SERVICES</h5>
           <Form>
             <Row className="my-9">
-              <Form.Group controlId="formretainercheckbox">
+              <Form.Group className="my-3" controlId="formretainercheckbox">
                 <Form.Check
                   type="checkbox"
                   id="retainer-checkbox"
-                  label="Is There Retainer Work?"
+                  label="Is Retainer"
+                  onChange={(e) => {
+                    if (e.target.checked === true) {
+                      setIsRetainer(true);
+                    } else {
+                      setIsRetainer(false);
+                    }
+                  }}
                 />
               </Form.Group>
               {selectedServices.map((service) => (
@@ -114,6 +121,42 @@ export default function Sidebar(props) {
                   </Form.Group>
                 </div>
               ))}
+
+              {isRetainer && (
+                <div>
+                  {selectedServices.map((service) => (
+                    <div>
+                      <h6>{service.name}</h6>
+                      <hr />
+                      <Form.Group className="mb-3">
+                        {service.subServices.map((subService) => (
+                          <Form.Check
+                            type="checkbox"
+                            id={`retainer-service-${subService}`}
+                            label={subService}
+                            key={subService}
+                            onChange={(e) => {
+                              if (e.target.checked === true) {
+                                setSelectedSubServices([
+                                  ...selectedSubServices,
+                                  subService,
+                                ]);
+                              } else {
+                                setSelectedSubServices(
+                                  selectedSubServices.filter(
+                                    (deselectedSubService) =>
+                                      deselectedSubService !== subService
+                                  )
+                                );
+                              }
+                            }}
+                          />
+                        ))}
+                      </Form.Group>
+                    </div>
+                  ))}
+                </div>
+              )}
             </Row>
           </Form>
         </Carousel.Item>
