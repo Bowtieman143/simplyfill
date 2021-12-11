@@ -16,7 +16,7 @@ export default function Sidebar(props) {
     <Col md={3} id="sidebar" className="bg-dark text-light h-100 p-4">
       <Carousel controls={true} indicators={false} interval={null}>
         <Carousel.Item>
-          <h3 className="mb-5">1. IDENTIFICATION OF THE PARTIES</h3>
+          <h5 className="mb-5">1. IDENTIFICATION OF THE PARTIES</h5>
           <Form className="mb-5">
             <Row className="mb-3">
               <Form.Group as={Col} controlId="formGridEmail">
@@ -68,7 +68,7 @@ export default function Sidebar(props) {
           </Form>
         </Carousel.Item>
         <Carousel.Item>
-          <h3 className="mb-5">2. ENGAGEMENT AND SERVICES</h3>
+          <h5 className="mb-5">2. ENGAGEMENT AND SERVICES</h5>
           <Form>
             <Row className="mb-3">
               <Form.Group as={Col} controlId="formGridEmail">

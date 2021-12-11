@@ -1,7 +1,13 @@
 import { Col, Form, Row, Button } from "react-bootstrap";
 
 export default function IdentificationOfTheParties(props) {
-  const { businessName, currentDate, currentMonth, businessAddress, selectedServices } = props;
+  const {
+    businessName,
+    currentDate,
+    currentMonth,
+    businessAddress,
+    selectedServices,
+  } = props;
 
   return (
     <li>
@@ -11,8 +17,9 @@ export default function IdentificationOfTheParties(props) {
           <p>
             This Service Agreement (the 'Agreement') is made and entered into on
             this {currentDate} day of {currentMonth} (the 'Effective Date') by
-            and between {businessName} with its registered address at {businessAddress} (the 'Client') and Intangible Media LLC
-            (the 'Service Provider').
+            and between {businessName} with its registered address at{" "}
+            {businessAddress} (the 'Client') and Intangible Media LLC (the
+            'Service Provider').
           </p>
         </li>
         <li>
@@ -24,9 +31,11 @@ export default function IdentificationOfTheParties(props) {
         <li>
           <p>
             By accepting this Agreement and subject to the terms and conditions
-            herein, the Service Provider agrees to provide {selectedServices.map(service => (
+            herein, the Service Provider agrees to provide{" "}
+            {selectedServices.map((service) => (
               <span>{`${service} `}</span>
-            ))} (the 'Services') to the Client in connection with its business
+            ))}{" "}
+            (the 'Services') to the Client in connection with its business
             operations.
           </p>
         </li>
