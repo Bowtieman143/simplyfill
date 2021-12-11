@@ -30,16 +30,26 @@ export default function Sidebar(props) {
 
   const {
     businessName,
+    projectName,
     businessAddress,
     selectedServices,
     selectedSubServices,
     isRetainer,
+    selectedRetainerSubServices,
+    contractStartDate,
+    contractEndDate,
   } = props;
 
   return (
     <Col md={9} id="primary" className="pt-5">
       <h2 className="text-center mb-5">Service Agreement - {businessName}</h2>
       <div id="contract">
+        <img
+          alt=""
+          src="/logo-dark.png"
+          width="180"
+          className="d-inline-block align-top"
+        />
         <ol className="">
           <IdentificationOfTheParties
             businessName={businessName}
@@ -49,11 +59,20 @@ export default function Sidebar(props) {
             selectedServices={selectedServices}
           />
           <EngagementAndServices
+            businessName={businessName}
             selectedServices={selectedServices}
             selectedSubServices={selectedSubServices}
             isRetainer={isRetainer}
+            selectedRetainerSubServices={selectedRetainerSubServices}
+            projectName={projectName}
           />
-          <ServicePeriodAndTermination />
+          <ServicePeriodAndTermination
+            currentDate={currentDate}
+            currentMonth={currentMonth}
+            businessAddress={businessAddress}
+            contractStartDate={contractStartDate}
+            contractEndDate={contractEndDate}
+          />
           <FeesForServicesPerformed />
           <ObligationsOfTheClient />
           <li>

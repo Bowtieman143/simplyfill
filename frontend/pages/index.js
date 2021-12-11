@@ -6,11 +6,16 @@ import Sidebar from "../components/sidebar";
 import Primary from "../components/primary";
 
 export default function Home() {
-  const [isRetainer, setIsRetainer] = useState(false)
+  const [isRetainer, setIsRetainer] = useState(false);
+  const [projectName, setProjectName] = useState("");
   const [businessName, setBusinessName] = useState("");
   const [businessAddress, setBusinessAddress] = useState("");
+  const [contractStartDate, setContractStartDate] = useState("");
+  const [contractEndDate, setContractEndDate] = useState("");
   const [selectedServices, setSelectedServices] = useState([]);
-  const [selectedSubServices, setSelectedSubServices] = useState([])
+  const [selectedSubServices, setSelectedSubServices] = useState([]);
+  const [selectedRetainerSubServices, setSelectedRetainerSubServices] =
+    useState([]);
   const [services, setServices] = useState([
     {
       name: "Website Development",
@@ -29,23 +34,16 @@ export default function Home() {
         "Brand Guide",
         "Website Mockups",
         "Website Prototypes",
-        "1 Hour Website Consultation"
+        "1 Hour Website Consultation",
       ],
     },
     {
       name: "Photography",
-      subServices: [
-        "Headshots",
-        "Interior Shots",
-        "Exterior Shots"
-      ],
+      subServices: ["Headshots", "Interior Shots", "Exterior Shots"],
     },
     {
       name: "Videography",
-      subServices: [
-        "30 Second Promotional Video",
-        "5 Minute Video"
-      ],
+      subServices: ["30 Second Promotional Video", "5 Minute Video"],
     },
   ]);
 
@@ -66,6 +64,8 @@ export default function Home() {
           <Sidebar
             businessName={businessName}
             setBusinessName={setBusinessName}
+            projectName={projectName}
+            setProjectName={setProjectName}
             businessAddress={businessAddress}
             setBusinessAddress={setBusinessAddress}
             services={services}
@@ -76,13 +76,23 @@ export default function Home() {
             setSelectedSubServices={setSelectedSubServices}
             isRetainer={isRetainer}
             setIsRetainer={setIsRetainer}
+            selectedRetainerSubServices={selectedRetainerSubServices}
+            setSelectedRetainerSubServices={setSelectedRetainerSubServices}
+            contractStartDate={contractStartDate}
+            setContractStartDate={setContractStartDate}
+            contractEndDate={contractEndDate}
+            setContractEndDate={setContractEndDate}
           />
           <Primary
             businessName={businessName}
+            projectName={projectName}
             businessAddress={businessAddress}
             selectedServices={selectedServices}
             selectedSubServices={selectedSubServices}
             isRetainer={isRetainer}
+            selectedRetainerSubServices={selectedRetainerSubServices}
+            contractStartDate={contractStartDate}
+            contractEndDate={contractEndDate}
           />
         </Row>
       </Container>
