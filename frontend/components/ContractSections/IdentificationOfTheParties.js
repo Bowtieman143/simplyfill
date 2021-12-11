@@ -11,7 +11,7 @@ export default function IdentificationOfTheParties(props) {
 
   return (
     <li>
-      <h4>IDENTIFICATION OF THE PARTIES</h4>
+      <h5>IDENTIFICATION OF THE PARTIES</h5>
       <ol>
         <li>
           <p>
@@ -33,7 +33,7 @@ export default function IdentificationOfTheParties(props) {
             By accepting this Agreement and subject to the terms and conditions
             herein, the Service Provider agrees to provide{" "}
             {selectedServices.map((service) => (
-              <span>{`${service} `}</span>
+              <span>{`${service.name} `}</span>
             ))}{" "}
             (the 'Services') to the Client in connection with its business
             operations.

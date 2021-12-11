@@ -3,7 +3,7 @@ import { Col, Form, Row, Button } from "react-bootstrap";
 export default function ServicePeriodAndTermination(props) {
   return (
     <li>
-      <h4>SERVICE PERIOD AND TERMINATION</h4>
+      <h5>SERVICE PERIOD AND TERMINATION</h5>
       <ol>
         <li>
           <p>

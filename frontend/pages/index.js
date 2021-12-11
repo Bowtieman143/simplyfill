@@ -6,14 +6,47 @@ import Sidebar from "../components/sidebar";
 import Primary from "../components/primary";
 
 export default function Home() {
+  const [isRetainer, setIsRetainer] = useState(false)
   const [businessName, setBusinessName] = useState("");
   const [businessAddress, setBusinessAddress] = useState("");
   const [selectedServices, setSelectedServices] = useState([]);
+  const [selectedSubServices, setSelectedSubServices] = useState([])
   const [services, setServices] = useState([
-    "Website Development",
-    "Graphic Design",
-    "Photography",
-    "Videography",
+    {
+      name: "Website Development",
+      subServices: [
+        "Hosting",
+        "Google Analytics Setup",
+        "Monthly Mantainace",
+        "Custom Child Theme",
+        "Develop Webpages Based on Mockup Designs",
+      ],
+    },
+    {
+      name: "Graphic Design",
+      subServices: [
+        "Logo Design",
+        "Brand Guide",
+        "Website Mockups",
+        "Website Prototypes",
+        "1 Hour Website Consultation"
+      ],
+    },
+    {
+      name: "Photography",
+      subServices: [
+        "Headshots",
+        "Interior Shots",
+        "Exterior Shots"
+      ],
+    },
+    {
+      name: "Videography",
+      subServices: [
+        "30 Second Promotional Video",
+        "5 Minute Video"
+      ],
+    },
   ]);
 
   return (
@@ -39,11 +72,17 @@ export default function Home() {
             setServices={setServices}
             selectedServices={selectedServices}
             setSelectedServices={setSelectedServices}
+            selectedSubServices={selectedSubServices}
+            setSelectedSubServices={setSelectedSubServices}
+            isRetainer={isRetainer}
+            setIsRetainer={setIsRetainer}
           />
           <Primary
             businessName={businessName}
             businessAddress={businessAddress}
             selectedServices={selectedServices}
+            selectedSubServices={selectedSubServices}
+            isRetainer={isRetainer}
           />
         </Row>
       </Container>

@@ -6,9 +6,19 @@ import FeesForServicesPerformed from "./ContractSections/FeesForServicesPerforme
 import ObligationsOfTheClient from "./ContractSections/ObligationsOfTheClient";
 
 export default function Sidebar(props) {
-  
-  const monthNames = ["January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December"
+  const monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
   ];
   let currentDate = new Date();
   const dd = String(currentDate.getDate()).padStart(2, "0");
@@ -17,21 +27,32 @@ export default function Sidebar(props) {
   const currentMonth = monthNames[new Date().getMonth()];
 
   currentDate = mm + "/" + dd + "/" + yyyy;
-  
-  const { businessName, businessAddress, selectedServices } = props;
+
+  const {
+    businessName,
+    businessAddress,
+    selectedServices,
+    selectedSubServices,
+    isRetainer,
+  } = props;
 
   return (
     <Col md={9} id="primary" className="pt-5">
-      <h1 className="text-center mb-5">Service Agreement - {businessName}</h1>
+      <h2 className="text-center mb-5">Service Agreement - {businessName}</h2>
       <div id="contract">
         <ol className="">
-          <IdentificationOfTheParties 
-            businessName={businessName} 
-            currentDate={currentDate} 
+          <IdentificationOfTheParties
+            businessName={businessName}
+            currentDate={currentDate}
             currentMonth={currentMonth}
             businessAddress={businessAddress}
-            selectedServices={selectedServices} />
-          <EngagementAndServices />
+            selectedServices={selectedServices}
+          />
+          <EngagementAndServices
+            selectedServices={selectedServices}
+            selectedSubServices={selectedSubServices}
+            isRetainer={isRetainer}
+          />
           <ServicePeriodAndTermination />
           <FeesForServicesPerformed />
           <ObligationsOfTheClient />

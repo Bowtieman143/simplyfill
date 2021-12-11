@@ -2,6 +2,8 @@ import { Col, Form, Row, Button, Carousel } from "react-bootstrap";
 
 export default function Sidebar(props) {
   const {
+    isRetainer,
+    setIsRetainer,
     businessName,
     setBusinessName,
     businessAddress,
@@ -10,6 +12,8 @@ export default function Sidebar(props) {
     setServices,
     selectedServices,
     setSelectedServices,
+    selectedSubServices,
+    setSelectedSubServices,
   } = props;
 
   return (
@@ -44,19 +48,20 @@ export default function Sidebar(props) {
             </Row>
             <Row className="my-9">
               <Form.Group className="my-4" controlId="formBasicCheckbox">
-                {services.map((service) => (  
+                {services.map((service) => (
                   <Form.Check
                     type="checkbox"
-                    id={`service-${service}`}
-                    label={service}
-                    key={service}
+                    id={`service-${service.name}`}
+                    label={service.name}
+                    key={service.name}
                     onChange={(e) => {
                       if (e.target.checked === true) {
                         setSelectedServices([...selectedServices, service]);
                       } else {
                         setSelectedServices(
                           selectedServices.filter(
-                            (deselectedService) => deselectedService !== service
+                            (deselectedService) =>
+                              deselectedService.name !== service.name
                           )
                         );
                       }
@@ -68,48 +73,47 @@ export default function Sidebar(props) {
           </Form>
         </Carousel.Item>
         <Carousel.Item>
-          <h5 className="mb-5">2. ENGAGEMENT AND SERVICES</h5>
+          <h5 className="">2. ENGAGEMENT AND SERVICES</h5>
           <Form>
-            <Row className="mb-3">
-              <Form.Group as={Col} controlId="formGridEmail">
-                <Form.Label>Email</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" />
+            <Row className="my-9">
+              <Form.Group controlId="formretainercheckbox">
+                <Form.Check
+                  type="checkbox"
+                  id="retainer-checkbox"
+                  label="Is There Retainer Work?"
+                />
               </Form.Group>
-
-              <Form.Group as={Col} controlId="formGridPassword">
-                <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" />
-              </Form.Group>
-            </Row>
-
-            <Form.Group className="mb-3" controlId="formGridAddress1">
-              <Form.Label>Address</Form.Label>
-              <Form.Control placeholder="1234 Main St" />
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="formGridAddress2">
-              <Form.Label>Address 2</Form.Label>
-              <Form.Control placeholder="Apartment, studio, or floor" />
-            </Form.Group>
-
-            <Row className="mb-3">
-              <Form.Group as={Col} controlId="formGridCity">
-                <Form.Label>City</Form.Label>
-                <Form.Control />
-              </Form.Group>
-
-              <Form.Group as={Col} controlId="formGridState">
-                <Form.Label>State</Form.Label>
-                <Form.Select defaultValue="Choose...">
-                  <option>Choose...</option>
-                  <option>...</option>
-                </Form.Select>
-              </Form.Group>
-
-              <Form.Group as={Col} controlId="formGridZip">
-                <Form.Label>Zip</Form.Label>
-                <Form.Control />
-              </Form.Group>
+              {selectedServices.map((service) => (
+                <div>
+                  <h6>{service.name}</h6>
+                  <hr />
+                  <Form.Group className="mb-3">
+                    {service.subServices.map((subService) => (
+                      <Form.Check
+                        type="checkbox"
+                        id={`oneoff-service-${subService}`}
+                        label={subService}
+                        key={subService}
+                        onChange={(e) => {
+                          if (e.target.checked === true) {
+                            setSelectedSubServices([
+                              ...selectedSubServices,
+                              subService,
+                            ]);
+                          } else {
+                            setSelectedSubServices(
+                              selectedSubServices.filter(
+                                (deselectedSubService) =>
+                                  deselectedSubService !== subService
+                              )
+                            );
+                          }
+                        }}
+                      />
+                    ))}
+                  </Form.Group>
+                </div>
+              ))}
             </Row>
           </Form>
         </Carousel.Item>
