@@ -135,13 +135,25 @@ a {
 
 #sidebar .carousel-control-prev,
 #sidebar .carousel-control-next {
-  position: absolute;
-  display: block;
-  width: 40px;
-  height: 40px;
+  position: static;
+  display: inline-block;
+  width: auto;
+  height: auto;
   top: 70vh;
   right: 20px;
   z-index: 5000;
+  padding: 15px 20px;
+  background: $primary;
+}
+
+#sidebar .carousel-control-prev-icon,
+#sidebar .carousel-control-next-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+#sidebar .carousel-control-prev {
+  margin-right: 20px;
 }
 
 /* import bootstrap to set changes */
