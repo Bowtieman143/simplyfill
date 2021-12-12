@@ -1,7 +1,7 @@
 import { Col, Form, Row, Button } from "react-bootstrap";
 
 export default function FeesForServicesPerformed(props) {
-  const { isRetainer } = props;
+  const { isRetainer, projectPrice, paymentOption } = props;
 
   return (
     <li>
@@ -11,8 +11,8 @@ export default function FeesForServicesPerformed(props) {
           <p>
             Payment is to be made via Electronic Bank Transfer (Zelle) / Check /
             Debit Card / Credit Card within 3 working days on receipt of invoice
-            to the following account details: [Insert your bank details or your
-            account name]
+            to the following account details: Zelle - Steven@intangiblemedia.com
+            / Check - Intangible Media
           </p>
           <ol>
             <li>
@@ -28,48 +28,75 @@ export default function FeesForServicesPerformed(props) {
           <ol>
             <li>
               <p>
-                The Client agrees to pay the Service Provider a project fee of
-                [$3,500.00]. The Service Provider’s obligation to render the
-                Services mentioned in Section 2 of this Agreement is conditional
-                upon payment by the Client in the following terms (the ‘Project
-                Based Schedule’):
+                The Client agrees to pay the Service Provider a project fee of{" "}
+                <span className="contract-alteration">{`$${projectPrice}`}</span>
+                . The Service Provider’s obligation to render the Services
+                mentioned in Section 2 of this Agreement is conditional upon
+                payment by the Client in the following terms (the ‘Project Based
+                Schedule’):
               </p>
               <ol>
-                <li>
-                  <p>100% upfront payment upon receipt of Invoice.</p>
-                </li>
-                <li>
-                  <p>
-                    50% down payment upon receipt of Invoice (the ‘Down
-                    Payment’).
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    The remaining 50% is to be paid upon completion of the
-                    website OR on [date].
-                  </p>
-                </li>
-                <li>
-                  <p>The completion of the project is described hereunder:</p>
-                  <ul className="dotted-list">
+                {paymentOption == 100 && (
+                  <li>
+                    <p>
+                      <span className="contract-alteration">
+                        100% upfront payment upon receipt of Invoice.
+                      </span>
+                    </p>
+                  </li>
+                )}
+                {paymentOption == 50 && (
+                  <>
                     <li>
                       <p>
-                        Fully functional conversion-focused e-commerce website
-                        (up to 50 products).
+                        <span className="contract-alteration">
+                          50% down payment upon receipt of Invoice (the ‘Down
+                          Payment’).
+                        </span>
                       </p>
                     </li>
                     <li>
-                      <p>Optimizing each page for on-page SEO.</p>
+                      <p>
+                        <span className="contract-alteration">
+                          The remaining 50% is to be paid upon completion of the
+                          website
+                        </span>
+                      </p>
                     </li>
                     <li>
                       <p>
-                        Marketing campaigns for AdWords and Social Media
-                        (Facebook).
+                        <span className="contract-alteration">
+                          The completion of the project is described hereunder:
+                        </span>
                       </p>
+                      <ul className="dotted-list">
+                        <li>
+                          <p>
+                            <span className="contract-alteration">
+                              Fully functional conversion-focused e-commerce
+                              website (up to 50 products).
+                            </span>
+                          </p>
+                        </li>
+                        <li>
+                          <p>
+                            <span className="contract-alteration">
+                              Optimizing each page for on-page SEO.
+                            </span>
+                          </p>
+                        </li>
+                        <li>
+                          <p>
+                            <span className="contract-alteration">
+                              Marketing campaigns for AdWords and Social Media
+                              (Facebook).
+                            </span>
+                          </p>
+                        </li>
+                      </ul>
                     </li>
-                  </ul>
-                </li>
+                  </>
+                )}
               </ol>
             </li>
             <li>
@@ -89,29 +116,36 @@ export default function FeesForServicesPerformed(props) {
         </li>
         {isRetainer && (
           <li>
-            <p>Retainer based work</p>
+            <p>
+              <span className="contract-alteration">Retainer based work</span>
+            </p>
             <ol>
               <li>
                 <p>
-                  In consideration for Services rendered, the Client agrees to
-                  pay the Service Provider’s fee of [$850.00] which will be due
-                  up front on the first of each month for that month’s Services
-                  until the Agreement has ended.
+                  <span className="contract-alteration">
+                    In consideration for Services rendered, the Client agrees to
+                    pay the Service Provider’s fee of [$850.00] which will be
+                    due up front on the first of each month for that month’s
+                    Services until the Agreement has ended.
+                  </span>
                 </p>
               </li>
               <li>
                 <p>
-                  If such amount is not received by this date, the Service
-                  Provider reserves the right to cease provision of Services to
-                  the Client. If a portion of an outstanding fee remains unpaid
-                  for more than 14 days after becoming due, a penalty of 15% of
-                  the outstanding amount will become due and payable.
+                  <span className="contract-alteration">
+                    If such amount is not received by this date, the Service
+                    Provider reserves the right to cease provision of Services
+                    to the Client. If a portion of an outstanding fee remains
+                    unpaid for more than 14 days after becoming due, a penalty
+                    of 15% of the outstanding amount will become due and
+                    payable.
+                  </span>
                 </p>
               </li>
             </ol>
           </li>
         )}
-        <li>
+        {/* <li>
           <p>Advertising fees</p>
           <ol>
             <li>
@@ -128,7 +162,7 @@ export default function FeesForServicesPerformed(props) {
               </p>
             </li>
           </ol>
-        </li>
+        </li> */}
       </ol>
     </li>
   );

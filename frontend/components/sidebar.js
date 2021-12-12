@@ -1,9 +1,14 @@
-import { Col, Form, Row, Button, Carousel } from "react-bootstrap";
+import { useState } from "react";
+import { Col, Form, Row, Button, Carousel, ProgressBar } from "react-bootstrap";
 
 export default function Sidebar(props) {
   const {
+    paymentOption,
+    setPaymentOption,
     projectName,
     setProjectName,
+    projectPrice,
+    setProjectPrice,
     isRetainer,
     setIsRetainer,
     businessName,
@@ -24,9 +29,30 @@ export default function Sidebar(props) {
     setContractEndDate,
   } = props;
 
+  const [index, setIndex] = useState(0);
+
+  const handleSelect = (selectedIndex, e) => {
+    setIndex(selectedIndex);
+  };
+
+  const currentProgress = (100 / 4) * (index + 1);
+
   return (
     <Col md={3} id="sidebar" className="bg-dark text-light h-100 p-4">
-      <Carousel controls={true} indicators={false} interval={null}>
+      <ProgressBar
+        animated
+        striped
+        now={currentProgress}
+        label={`${currentProgress}%`}
+        className="mb-4"
+      />
+      <Carousel
+        controls={true}
+        indicators={false}
+        interval={null}
+        activeIndex={index}
+        onSelect={handleSelect}
+      >
         <Carousel.Item>
           <h5 className="mb-2">1. Identification of The Parties</h5>
           <Form className="mb-5">
@@ -193,15 +219,52 @@ export default function Sidebar(props) {
           <Form className="mb-5">
             <h6 className="mt-4 mb-3">Contract Start Date</h6>
             <Form.Group className="mb-3" controlId="formstartdate">
-              <Form.Control type="date" value={contractStartDate} onChange={(e) => {
-                setContractStartDate(e.target.value)
-              }}/>
+              <Form.Control
+                type="date"
+                value={contractStartDate}
+                onChange={(e) => {
+                  setContractStartDate(e.target.value);
+                }}
+              />
             </Form.Group>
             <h6 className="mt-4 mb-3">Contract End Date</h6>
             <Form.Group className="mb-3" controlId="formenddate">
-              <Form.Control type="date" value={contractEndDate} onChange={(e) => {
-                setContractEndDate(e.target.value)
-              }}/>
+              <Form.Control
+                type="date"
+                value={contractEndDate}
+                onChange={(e) => {
+                  setContractEndDate(e.target.value);
+                }}
+              />
+            </Form.Group>
+          </Form>
+        </Carousel.Item>
+        <Carousel.Item>
+          <h5 className="mb-2">4. Fees For Services Performed</h5>
+          <Form className="mb-5">
+            <h6 className="mt-4 mb-3">Project Price</h6>
+            <Form.Group className="mb-3" controlId="formsprojectprice">
+              <Form.Control
+                type="number"
+                value={projectPrice}
+                onChange={(e) => {
+                  setProjectPrice(e.target.value);
+                }}
+              />
+            </Form.Group>
+            <h6 className="mt-4 mb-3">Payment Options</h6>
+            <Form.Group className="mb-3" controlId="formsprojectprice">
+              <Form.Select
+                aria-label="Default select example"
+                onChange={(e) => {
+                  console.log(e.target.value);
+                  setPaymentOption(e.target.value);
+                }}
+              >
+                <option>Open this select menu</option>
+                <option value={100}>100% Upfront</option>
+                <option value={50}>50% Upfront and 50% upon Completion</option>
+              </Form.Select>
             </Form.Group>
           </Form>
         </Carousel.Item>

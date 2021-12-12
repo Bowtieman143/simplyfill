@@ -30,7 +30,9 @@ export default function Sidebar(props) {
 
   const {
     businessName,
+    paymentOption,
     projectName,
+    projectPrice,
     businessAddress,
     selectedServices,
     selectedSubServices,
@@ -75,6 +77,8 @@ export default function Sidebar(props) {
           />
           <FeesForServicesPerformed 
             isRetainer={isRetainer}
+            projectPrice={projectPrice}
+            paymentOption={paymentOption}
           />
           <ObligationsOfTheClient />
           <li>

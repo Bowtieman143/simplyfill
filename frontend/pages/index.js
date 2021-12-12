@@ -7,6 +7,8 @@ import Primary from "../components/primary";
 
 export default function Home() {
   const [isRetainer, setIsRetainer] = useState(false);
+  const [projectPrice, setProjectPrice] = useState(0)
+  const [paymentOption, setPaymentOption] = useState(100)
   const [projectName, setProjectName] = useState("");
   const [businessName, setBusinessName] = useState("");
   const [businessAddress, setBusinessAddress] = useState("");
@@ -82,6 +84,10 @@ export default function Home() {
             setContractStartDate={setContractStartDate}
             contractEndDate={contractEndDate}
             setContractEndDate={setContractEndDate}
+            projectPrice={projectPrice}
+            setProjectPrice={setProjectPrice}
+            paymentOption={paymentOption}
+            setPaymentOption={setPaymentOption}
           />
           <Primary
             businessName={businessName}
@@ -93,6 +99,8 @@ export default function Home() {
             selectedRetainerSubServices={selectedRetainerSubServices}
             contractStartDate={contractStartDate}
             contractEndDate={contractEndDate}
+            projectPrice={projectPrice}
+            paymentOption={paymentOption}
           />
         </Row>
       </Container>

@@ -65,6 +65,10 @@ a {
   background-color: #ffe91f;
 }
 
+#primary {
+  background-color: #FBFBFB;
+}
+
 #primary #contract ol { 
   counter-reset: item;
 }
@@ -120,7 +124,7 @@ a {
 }
 
 #sidebar .carousel.slide {
-  height: 80vh;
+  height: 72vh;
   position: relative;
   overflow-y: auto;
 }
