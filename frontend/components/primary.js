@@ -73,7 +73,9 @@ export default function Sidebar(props) {
             contractStartDate={contractStartDate}
             contractEndDate={contractEndDate}
           />
-          <FeesForServicesPerformed />
+          <FeesForServicesPerformed 
+            isRetainer={isRetainer}
+          />
           <ObligationsOfTheClient />
           <li>
             <h4>OWNERSHIP AND RISK</h4>

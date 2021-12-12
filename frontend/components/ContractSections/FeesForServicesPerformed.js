@@ -1,17 +1,27 @@
 import { Col, Form, Row, Button } from "react-bootstrap";
 
 export default function FeesForServicesPerformed(props) {
+  const { isRetainer } = props;
+
   return (
     <li>
       <h5>FEES FOR SERVICES PERFORMED</h5>
       <ol>
         <li>
           <p>
-            Payment is to be made via [PayPal / Freshbooks / Electronic Bank
-            Transfer / Transferwise, etc.] within 3 working days on receipt of
-            invoice to the following account details: [Insert your bank details
-            or your account name]
+            Payment is to be made via Electronic Bank Transfer (Zelle) / Check /
+            Debit Card / Credit Card within 3 working days on receipt of invoice
+            to the following account details: [Insert your bank details or your
+            account name]
           </p>
+          <ol>
+            <li>
+              <p>
+                The Client agrees to pay the Service Provider a transaction fee
+                of 5% if using a Debit Card or Credit card.
+              </p>
+            </li>
+          </ol>
         </li>
         <li>
           <p>Project Based Work:</p>
@@ -77,28 +87,30 @@ export default function FeesForServicesPerformed(props) {
             </li>
           </ol>
         </li>
-        <li>
-          <p>Retainer based work</p>
-          <ol>
-            <li>
-              <p>
-                In consideration for Services rendered, the Client agrees to pay
-                the Service Provider’s fee of [$850.00] which will be due up
-                front on the first of each month for that month’s Services until
-                the Agreement has ended.
-              </p>
-            </li>
-            <li>
-              <p>
-                If such amount is not received by this date, the Service
-                Provider reserves the right to cease provision of Services to
-                the Client. If a portion of an outstanding fee remains unpaid
-                for more than 14 days after becoming due, a penalty of 15% of
-                the outstanding amount will become due and payable.
-              </p>
-            </li>
-          </ol>
-        </li>
+        {isRetainer && (
+          <li>
+            <p>Retainer based work</p>
+            <ol>
+              <li>
+                <p>
+                  In consideration for Services rendered, the Client agrees to
+                  pay the Service Provider’s fee of [$850.00] which will be due
+                  up front on the first of each month for that month’s Services
+                  until the Agreement has ended.
+                </p>
+              </li>
+              <li>
+                <p>
+                  If such amount is not received by this date, the Service
+                  Provider reserves the right to cease provision of Services to
+                  the Client. If a portion of an outstanding fee remains unpaid
+                  for more than 14 days after becoming due, a penalty of 15% of
+                  the outstanding amount will become due and payable.
+                </p>
+              </li>
+            </ol>
+          </li>
+        )}
         <li>
           <p>Advertising fees</p>
           <ol>
