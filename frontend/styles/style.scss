@@ -94,6 +94,31 @@ a {
   left: -40px;
 }
 
+#primary #contract ol ol ol ol {
+  padding-left: 50px;
+}
+
+#primary #contract ol ol ol ol ul {
+  padding-left: 0;
+}
+
+#primary #contract ol ol ol ol ul li {
+  list-style: disc outside none;
+  display: list-item;
+  margin-left: 1em;
+}
+
+#primary #contract ol ol ol ol ul p:before {
+  background-color: red;
+  counter-increment: none;
+  position: static;
+  content: none;
+}
+
+#primary #contract ol ol ol ol p:before {
+  left: -60px;
+}
+
 #sidebar .carousel.slide {
   height: 80vh;
   position: relative;
