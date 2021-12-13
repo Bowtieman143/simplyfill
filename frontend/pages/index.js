@@ -1,9 +1,9 @@
 import { useState } from "react";
 import Head from "next/head";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
-import Navbar from "../components/Navbar";
-import Sidebar from "../components/Sidebar";
+import Navigation from "../components/Navigation";
 import Primary from "../components/Primary";
+import Sidebar from "../components/Sidebar";
 
 export default function Home() {
   const [isRetainer, setIsRetainer] = useState(false);

@@ -1,6 +1,6 @@
 import { Container, Navbar, Nav } from "react-bootstrap";
 
-export default function MainNavbar(props) {
+export default function Navigation(props) {
   return (
     <Navbar bg="dark" variant="dark">
       <Container fluid className="px-3">
