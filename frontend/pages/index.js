@@ -60,7 +60,7 @@ export default function Home() {
       <Container fluid>
         <Row className="bg-dark">
           <Col>
-            <Navbar />
+            <Navigation />
           </Col>
         </Row>
         <Row>
