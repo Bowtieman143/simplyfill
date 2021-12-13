@@ -94,7 +94,22 @@ export default function Sidebar(props) {
       </Nav>
 
       {currentDocument === "proposal" && (
-        <Proposal businessName={businessName} />
+        <Proposal 
+          currentMonth={currentMonth}
+          currentDate={currentDate}
+          retainerPrice={retainerPrice}
+          businessName={businessName}
+          paymentOption={paymentOption}
+          projectName={projectName}
+          projectPrice={projectPrice}
+          businessAddress={businessAddress}
+          selectedServices={selectedServices}
+          selectedSubServices={selectedSubServices}
+          isRetainer={isRetainer}
+          selectedRetainerSubServices={selectedRetainerSubServices}
+          contractStartDate={contractStartDate}
+          contractEndDate={contractEndDate}
+        />
       )}
 
       {currentDocument === "invoice" && (

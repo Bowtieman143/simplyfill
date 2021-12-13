@@ -60,13 +60,25 @@ a {
   /* overflow-y: scroll; */
 }
 
-#contract img,
-#proposal img,
-#invoice img,
-#scope-of-work img {
+#contract img {
   margin-left: -10px;
   margin-bottom: 40px;
 }
+
+#proposal img,
+#invoice img,
+#scope-of-work img {
+  margin-left: 0px;
+  margin-bottom: 40px;
+}
+
+// #scope-of-work .row {
+//   margin-left: -10px;
+// }
+
+// #scope-of-work .row .col {
+//   margin-left: 0 !important;
+// }
 
 span.entered-data {
   background-color: #ffe91f;
@@ -165,6 +177,8 @@ span.entered-data {
 #sidebar .carousel-control-prev {
   margin-right: 20px;
 }
+
+
 
 /* import bootstrap to set changes */
 @import "~bootstrap/scss/bootstrap";
