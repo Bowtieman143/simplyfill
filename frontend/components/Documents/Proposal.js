@@ -1,5 +1,6 @@
 import ScopeOfWork from "./ScopeOfWork";
 import Contract from "./Contract";
+import Invoice from "./Invoice";
 
 export default function Proposal(props) {
   const {
@@ -21,8 +22,6 @@ export default function Proposal(props) {
 
   return (
     <div id="proposal-container">
-      <h2 className="text-center mb-5">Proposal - {businessName}</h2>
-
       <div id="proposal">
         <img
           alt=""
@@ -32,6 +31,18 @@ export default function Proposal(props) {
         />
 
         <ScopeOfWork businessName={businessName} />
+
+        <h4 className="mt-5 mb-5">Pricing / Costs</h4>
+
+        <Invoice
+          showCompanyDetails={false}
+          businessName={businessName}
+          businessAddress={businessAddress}
+          currentDate={currentDate}
+        />
+
+        <h4 className="mt-5 mb-5">Terms and Conditions</h4>
+
         <Contract
           currentMonth={currentMonth}
           currentDate={currentDate}

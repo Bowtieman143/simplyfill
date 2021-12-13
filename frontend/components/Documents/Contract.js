@@ -36,13 +36,13 @@ export default function Contract(props) {
 
   return (
     <div id="contract-container">
-      <h2 className="text-center mb-5">Service Agreement - {businessName}</h2>
       <div id="contract">
         <img
           alt=""
           src="/logo-dark.png"
           width="180"
           className="d-inline-block align-top"
+          id="contract-document-img"
         />
         <ol className="">
           <IdentificationOfTheParties

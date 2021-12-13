@@ -60,6 +60,23 @@ a {
   /* overflow-y: scroll; */
 }
 
+#proposal #scope,
+#proposal #contract,
+#proposal #invoice {
+  max-width: 900px;
+  width: 100%;
+  margin: auto;
+  padding: 0;
+  box-shadow: none;
+  background-color: #ffffff;
+}
+
+#proposal img#contract-document-img,
+#proposal img#scope-document-img,
+#proposal img#invoice-document-img {
+  display: none !important;
+}
+
 #contract img {
   margin-left: -10px;
   margin-bottom: 40px;
@@ -67,7 +84,7 @@ a {
 
 #proposal img,
 #invoice img,
-#scope-of-work img {
+#scope img {
   margin-left: 0px;
   margin-bottom: 40px;
 }

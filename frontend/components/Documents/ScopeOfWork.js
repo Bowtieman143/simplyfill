@@ -3,15 +3,14 @@ import { Row, Col } from "react-bootstrap";
 export default function ScopeOfWork(props) {
   const { businessName } = props;
   return (
-    <div id="proposal-container">
-      <h2 className="text-center mb-5">Scope of Work - {businessName}</h2>
-
-      <div id="proposal">
+    <div id="scope-container">
+      <div id="scope">
         <img
           alt=""
           src="/logo-dark.png"
           width="180"
           className="d-inline-block align-top"
+          id="scope-document-img"
         />
 
         <Row className="mb-5">
@@ -80,7 +79,7 @@ export default function ScopeOfWork(props) {
         </Row>
         <Row className="py-3 mb-3">
           <Col>
-            <h5 className="mb-2">Phase - One</h5>
+            <h5 className="mb-2">Phase - Two</h5>
             <p>
               The above demonstrates how flexible the component model can be.
               But if you didn't want to roll your own versions we've included a
@@ -94,7 +93,7 @@ export default function ScopeOfWork(props) {
         </Row>
         <Row className="py-3 mb-3">
           <Col>
-            <h5 className="mb-2">Phase - One</h5>
+            <h5 className="mb-2">Phase - Three</h5>
             <p>
               The above demonstrates how flexible the component model can be.
               But if you didn't want to roll your own versions we've included a
@@ -108,7 +107,7 @@ export default function ScopeOfWork(props) {
         </Row>
         <Row className="py-3 mb-3">
           <Col>
-            <h5 className="mb-2">Phase - One</h5>
+            <h5 className="mb-2">Phase - Four</h5>
             <p>
               The above demonstrates how flexible the component model can be.
               But if you didn't want to roll your own versions we've included a

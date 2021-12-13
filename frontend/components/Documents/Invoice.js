@@ -1,55 +1,60 @@
 export default function Invoice(props) {
-  const { businessAddress, businessName, currentDate } = props;
+  const { businessAddress, businessName, currentDate, showCompanyDetails } =
+    props;
+
   return (
     <div id="invoice-container">
-      <h2 className="text-center mb-5">Invoice - {businessName}</h2>
-
       <div id="invoice">
         <img
           alt=""
           src="/logo-dark.png"
           width="180"
           className="d-inline-block align-top"
+          id="invoice-document-img"
         />
 
         <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 border-0 padding">
           <div className="card border-0">
-            <div className="card-header bg-white p-0">
-              <a
-                className="pt-2 d-inline-block text-primary"
-                href="index.html"
-                data-abc="true"
-              >
-                Intangiblemedia.com
-              </a>
-              <div className="float-right">
-                <h3 className="mb-0">Invoice #BBB10234</h3>
-                <span className="entered-data">{currentDate}</span>
+            {showCompanyDetails && (
+              <div className="card-header bg-white p-0">
+                <a
+                  className="pt-2 d-inline-block text-primary"
+                  href="index.html"
+                  data-abc="true"
+                >
+                  Intangiblemedia.com
+                </a>
+                <div className="float-right">
+                  <h3 className="mb-0">Invoice #BBB10234</h3>
+                  <span className="entered-data">{currentDate}</span>
+                </div>
               </div>
-            </div>
+            )}
             <div className="card-body px-0">
-              <div className="row mb-4">
-                <div className="col-sm-6">
-                  <h5 className="mb-3">From:</h5>
-                  <h3 className="text-dark mb-1">Intangible Media LLC</h3>
-                  <div>2390 E Camelback Rd #130</div>
-                  <div>Phoenix, Arizona 85016</div>
-                  <div>Email: steven@intangiblemedia.com</div>
-                  <div>Phone: 602.802.9766</div>
-                </div>
-                <div className="col-sm-6 ">
-                  <h5 className="mb-3">To:</h5>
-                  <h3 className="text-dark mb-1">
-                    <span className="entered-data">{businessName}</span>
-                  </h3>
-                  <div>478, Nai Sadak</div>
-                  <div>
-                    <span className="entered-data">{businessAddress}</span>
+              {showCompanyDetails && (
+                <div className="row mb-4">
+                  <div className="col-sm-6">
+                    <h5 className="mb-3">From:</h5>
+                    <h3 className="text-dark mb-1">Intangible Media LLC</h3>
+                    <div>2390 E Camelback Rd #130</div>
+                    <div>Phoenix, Arizona 85016</div>
+                    <div>Email: steven@intangiblemedia.com</div>
+                    <div>Phone: 602.802.9766</div>
                   </div>
-                  <div>Email: info@tikon.com</div>
-                  <div>Phone: +91 9895 398 009</div>
+                  <div className="col-sm-6 ">
+                    <h5 className="mb-3">To:</h5>
+                    <h3 className="text-dark mb-1">
+                      <span className="entered-data">{businessName}</span>
+                    </h3>
+                    <div>478, Nai Sadak</div>
+                    <div>
+                      <span className="entered-data">{businessAddress}</span>
+                    </div>
+                    <div>Email: info@tikon.com</div>
+                    <div>Phone: +91 9895 398 009</div>
+                  </div>
                 </div>
-              </div>
+              )}
               <div className="table-responsive-sm">
                 <table className="table table-striped">
                   <thead>
@@ -137,15 +142,22 @@ export default function Invoice(props) {
                 </div>
               </div>
             </div>
-            <div className="card-footer bg-white 0x-0">
-              <p className="mb-0">
-                Intangible Media LLC, 2390 E Camelback Rd #130 85016, Phoenix
-                Arizona
-              </p>
-            </div>
+            {showCompanyDetails && (
+              <div className="card-footer bg-white 0x-0">
+                <p className="mb-0">
+                  Intangible Media LLC, 2390 E Camelback Rd #130 85016, Phoenix
+                  Arizona
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </div>
     </div>
   );
 }
+
+Invoice.defaultProps = {
+  showCompanyDetails: true,
+  showClientDetails: false,
+};
