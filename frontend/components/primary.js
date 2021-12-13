@@ -59,7 +59,11 @@ export default function Sidebar(props) {
 
   return (
     <Col md={9} id="primary" className="pt-0">
-      <Nav variant="pills" className="justify-content-center py-4 mb-4" defaultActiveKey="1">
+      <Nav
+        variant="pills"
+        className="justify-content-center py-4 mb-4"
+        defaultActiveKey="1"
+      >
         <Nav.Item>
           <Nav.Link
             eventKey="1"
@@ -104,7 +108,7 @@ export default function Sidebar(props) {
 
       {currentDocument === "proposal" && (
         <div id="proposal-container">
-                    <h2 className="text-center mb-5">Proposal - {businessName}</h2>
+          <h2 className="text-center mb-5">Proposal - {businessName}</h2>
 
           <div id="proposal">
             <img
@@ -119,7 +123,7 @@ export default function Sidebar(props) {
 
       {currentDocument === "invoice" && (
         <div id="invoice-container">
-                    <h2 className="text-center mb-5">Invoice - {businessName}</h2>
+          <h2 className="text-center mb-5">Invoice - {businessName}</h2>
 
           <div id="invoice">
             <img
@@ -134,7 +138,7 @@ export default function Sidebar(props) {
 
       {currentDocument === "scopeOfWork" && (
         <div id="scope-of-work-container">
-                    <h2 className="text-center mb-5">Scope of Work - {businessName}</h2>
+          <h2 className="text-center mb-5">Scope of Work - {businessName}</h2>
 
           <div id="scope">
             <img
@@ -149,7 +153,9 @@ export default function Sidebar(props) {
 
       {currentDocument === "contract" && (
         <div id="contract-container">
-          <h2 className="text-center mb-5">Service Agreement - {businessName}</h2>
+          <h2 className="text-center mb-5">
+            Service Agreement - {businessName}
+          </h2>
           <div id="contract">
             <img
               alt=""
