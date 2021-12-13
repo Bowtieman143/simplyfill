@@ -32,7 +32,7 @@ export default function LimitationOfLiability(props) {
         <li>
           <p>
             The above mentioned limitations in this section of the Agreement
-            shall not apply to a breach of confidentiality or a breach of one’s
+            shall not apply to a breach of confidentiality or a breach of one&apos;s
             rights or obligations under the transfer of intellectual property
             rights as set out in section 7.
           </p>

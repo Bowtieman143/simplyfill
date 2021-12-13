@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ScopeOfWork from "./ScopeOfWork";
 import Contract from "./Contract";
 import Invoice from "./Invoice";
@@ -23,13 +24,13 @@ export default function Proposal(props) {
   return (
     <div id="proposal-container">
       <div id="proposal">
-        <img
-          alt=""
+        <Image
           src="/logo-dark.png"
-          width="180"
+          width={180}
+          height={53}
           className="d-inline-block align-top"
+          id="contract-document-img"
         />
-
         <ScopeOfWork businessName={businessName} />
 
         <h4 className="mt-5 mb-5">Pricing / Costs</h4>

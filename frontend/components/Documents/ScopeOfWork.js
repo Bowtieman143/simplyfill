@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Row, Col } from "react-bootstrap";
 
 export default function ScopeOfWork(props) {
@@ -5,14 +6,13 @@ export default function ScopeOfWork(props) {
   return (
     <div id="scope-container">
       <div id="scope">
-        <img
-          alt=""
+        <Image
           src="/logo-dark.png"
-          width="180"
+          width={180}
+          height={53}
           className="d-inline-block align-top"
-          id="scope-document-img"
+          id="contract-document-img"
         />
-
         <Row className="mb-5">
           <Col>
             <h5>
@@ -43,7 +43,7 @@ export default function ScopeOfWork(props) {
             <h5 className="mb-3">Project Description</h5>
             <p>
               The above demonstrates how flexible the component model can be.
-              But if you didn't want to roll your own versions we've included a
+              But if you didn&apos;t want to roll your own versions we&apos;ve included a
               straight-forward that works for most cases.
             </p>
           </Col>
@@ -53,7 +53,7 @@ export default function ScopeOfWork(props) {
             <h5 className="mb-3">Project Deliverables</h5>
             <p>
               The above demonstrates how flexible the component model can be.
-              But if you didn't want to roll your own versions we've included a
+              But if you didn&apos;t want to roll your own versions we&apos;ve included a
               straight-forward that works for most cases.
             </p>
           </Col>
@@ -68,7 +68,7 @@ export default function ScopeOfWork(props) {
             <h5 className="mb-2">Phase - One</h5>
             <p>
               The above demonstrates how flexible the component model can be.
-              But if you didn't want to roll your own versions we've included a
+              But if you didn&apos;t want to roll your own versions we&apos;ve included a
               straight-forward that works for most cases.
             </p>
           </Col>
@@ -82,7 +82,7 @@ export default function ScopeOfWork(props) {
             <h5 className="mb-2">Phase - Two</h5>
             <p>
               The above demonstrates how flexible the component model can be.
-              But if you didn't want to roll your own versions we've included a
+              But if you didn&apos;t want to roll your own versions we&apos;ve included a
               straight-forward that works for most cases.
             </p>
           </Col>
@@ -96,7 +96,7 @@ export default function ScopeOfWork(props) {
             <h5 className="mb-2">Phase - Three</h5>
             <p>
               The above demonstrates how flexible the component model can be.
-              But if you didn't want to roll your own versions we've included a
+              But if you didn&apos;t want to roll your own versions we&apos;ve included a
               straight-forward that works for most cases.
             </p>
           </Col>
@@ -110,7 +110,7 @@ export default function ScopeOfWork(props) {
             <h5 className="mb-2">Phase - Four</h5>
             <p>
               The above demonstrates how flexible the component model can be.
-              But if you didn't want to roll your own versions we've included a
+              But if you didn&apos;t want to roll your own versions we&apos;ve included a
               straight-forward that works for most cases.
             </p>
           </Col>
@@ -119,7 +119,6 @@ export default function ScopeOfWork(props) {
             <p>12/03/2001</p>
           </Col>
         </Row>
-        
       </div>
     </div>
   );

@@ -8,13 +8,13 @@ export default function ConfidentialityAndResponsibility(props) {
         <li>
           <p>
             In this Agreement, the Services performed and any and all
-            information relating to the Client’s business, including, but not
+            information relating to the Client&apos;s business, including, but not
             limited to, research, developments, products plans, products,
             services, diagrams, formulae, processes, techniques, technology,
             software, ideas, discoveries, designs, inventions, improvements,
             copyrights, trademarks, marketing, sales, trade secrets,
             intellectual property, finances disclosed by the Client is
-            hereinafter referred to as ‘Confidential Information‘.
+            hereinafter referred to as &apos;Confidential Information&apos;.
           </p>
         </li>
         <li>
@@ -60,8 +60,8 @@ export default function ConfidentialityAndResponsibility(props) {
         <li>
           <p>
             Upon termination or expiration of this Agreement for any reason, or
-            upon the Client’s earlier request, the Service Provider will deliver
-            to the Client all of the Client’s property or Confidential
+            upon the Client&apos;s earlier request, the Service Provider will deliver
+            to the Client all of the Client&apos;s property or Confidential
             Information in tangible form that the Service Provider may have in
             their possession or control.
           </p>

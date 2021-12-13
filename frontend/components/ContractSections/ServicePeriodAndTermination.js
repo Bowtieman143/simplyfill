@@ -15,12 +15,12 @@ export default function ServicePeriodAndTermination(props) {
       <ol>
         <li>
           <p>
-            This Service Agreement (the ‘Agreement’) is made and entered into on
+            This Service Agreement (the &apos;Agreement&apos;) is made and entered into on
             this day of{" "}
             <span className="entered-data">{currentMonth}</span> (the
-            ‘Effective Date’) by and between with its registered address at{" "}
+            &apos;Effective Date&apos;) by and between with its registered address at{" "}
             <span className="entered-data">{businessAddress}</span> (the
-            ‘Client’) and Intangible Media LLC (the ‘Service Provider’).
+            &apos;Client&apos;) and Intangible Media LLC (the &apos;Service Provider&apos;).
             <br />
             <br />
             This Agreement shall commence on{" "}
@@ -32,7 +32,7 @@ export default function ServicePeriodAndTermination(props) {
         <li>
           <p>
             Either party may elect to terminate the Agreement by providing at
-            least one months’ notice (30 calendar days) to the other Party. Such
+            least one months&apos; notice (30 calendar days) to the other Party. Such
             notice must be in writing. Payment for the Services performed to
             date are not recoverable upon termination. Termination does not
             preclude the Client from payment of Services to the date of

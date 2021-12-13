@@ -15,20 +15,20 @@ export default function IdentificationOfTheParties(props) {
       <ol>
         <li>
           <p>
-            This Service Agreement (the 'Agreement') is made and entered into on
+            This Service Agreement (the &apos;Agreement&apos;) is made and entered into on
             this <span className="entered-data">{currentDate}</span> day
             of <span className="entered-data">{currentMonth}</span> (the
-            'Effective Date') by and between{" "}
+            &apos;Effective Date&apos;) by and between{" "}
             <span className="entered-data">{businessName}</span> with its
             registered address at{" "}
             <span className="entered-data">{businessAddress}</span> (the
-            'Client') and Intangible Media LLC (the 'Service Provider').
+            &apos;Client&apos;) and Intangible Media LLC (the &apos;Service Provider&apos;).
           </p>
         </li>
         <li>
           <p>
             The Client and the Service Provider are hereinafter referred to
-            individually as a 'Party' and collectively as the 'Parties'.
+            individually as a &apos;Party&apos; and collectively as the &apos;Parties&apos;.
           </p>
         </li>
         <li>
@@ -38,7 +38,7 @@ export default function IdentificationOfTheParties(props) {
             {selectedServices.map((service) => (
               <span className="entered-data" key={`identification-${service.name}`}>{`${service.name} `}</span>
             ))}{" "}
-            (the 'Services') to the Client in connection with its business
+            (the &apos;Services&apos;) to the Client in connection with its business
             operations.
           </p>
         </li>

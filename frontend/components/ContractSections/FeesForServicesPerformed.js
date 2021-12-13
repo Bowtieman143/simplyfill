@@ -30,10 +30,10 @@ export default function FeesForServicesPerformed(props) {
               <p>
                 The Client agrees to pay the Service Provider a project fee of{" "}
                 <span className="entered-data">{`$${projectPrice}`}</span>
-                . The Service Provider’s obligation to render the Services
+                . The Service Provider&apos;s obligation to render the Services
                 mentioned in Section 2 of this Agreement is conditional upon
-                payment by the Client in the following terms (the ‘Project Based
-                Schedule’):
+                payment by the Client in the following terms (the &apos;Project Based
+                Schedule&apos;):
               </p>
               <ol>
                 {paymentOption == 100 && (
@@ -50,8 +50,8 @@ export default function FeesForServicesPerformed(props) {
                     <li>
                       <p>
                         <span className="entered-data">
-                          50% down payment upon receipt of Invoice (the ‘Down
-                          Payment’).
+                          50% down payment upon receipt of Invoice (the &apos;Down
+                          Payment&apos;).
                         </span>
                       </p>
                     </li>
@@ -124,10 +124,10 @@ export default function FeesForServicesPerformed(props) {
                 <p>
                   <span className="entered-data">
                     In consideration for Services rendered, the Client agrees to
-                    pay the Service Provider’s fee of{" "}
+                    pay the Service Provider&apos;s fee of{" "}
                     <span className="entered-data">${retainerPrice}</span>{" "}
                     which will be due up front on the first of each month for
-                    that month’s Services until the Agreement has ended.
+                    that month&apos;s Services until the Agreement has ended.
                   </span>
                 </p>
               </li>
@@ -152,7 +152,7 @@ export default function FeesForServicesPerformed(props) {
             <li>
               <p>
                 All advertising fees, such as Google Ads, Facebook Ads, and any
-                other related advertising fees, are for the Client’s account.
+                other related advertising fees, are for the Client&apos;s account.
               </p>
             </li>
             <li>

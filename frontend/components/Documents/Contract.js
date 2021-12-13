@@ -1,3 +1,4 @@
+import Image from "next/image";
 import IdentificationOfTheParties from "../ContractSections/IdentificationOfTheParties";
 import EngagementAndServices from "../ContractSections/EngagementAndServices";
 import ServicePeriodAndTermination from "../ContractSections/ServicePeriodAndTermination";
@@ -31,16 +32,16 @@ export default function Contract(props) {
     contractStartDate,
     contractEndDate,
     currentDate,
-    currentMonth
+    currentMonth,
   } = props;
 
   return (
     <div id="contract-container">
       <div id="contract">
-        <img
-          alt=""
+        <Image
           src="/logo-dark.png"
-          width="180"
+          width={180}
+          height={53}
           className="d-inline-block align-top"
           id="contract-document-img"
         />

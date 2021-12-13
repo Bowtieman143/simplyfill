@@ -16,13 +16,13 @@ export default function ObligationsOfTheClient(props) {
         <li>
           <p>
             The Client agrees that the completion of one or more of the
-            deliverables may depend on and require the Client’s commitment of
+            deliverables may depend on and require the Client&apos;s commitment of
             certain resources which should be promptly provided. The Client
             agrees to provide such resources as are necessary to fulfil the
-            Service Provider’s and its own obligations under this Agreement and
+            Service Provider&apos;s and its own obligations under this Agreement and
             to timely complete and fulfil its required actions in order for the
             Service Provider to be able to fully comply with its obligations
-            under this Agreement. The Client’s failure to provide such resources
+            under this Agreement. The Client&apos;s failure to provide such resources
             and to timely fulfil such obligations shall not constitute a basis
             for the retention of payments and/or allegations of breach of
             contract by the Client.

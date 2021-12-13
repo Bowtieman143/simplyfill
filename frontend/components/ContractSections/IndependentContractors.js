@@ -15,7 +15,7 @@ export default function IndependentContractors(props) {
             its employees. The Service Provider agrees to pay all taxes due in
             respect of the Service Fee and to indemnify the Client in respect of
             any obligation that may be imposed on the Client to pay any such
-            taxes or resulting from the Service Provider’s being determined not
+            taxes or resulting from the Service Provider&apos;s being determined not
             to be an independent contractor. This Agreement does not authorize
             the Service Provider to act for the Client as its agent or to make
             communications on behalf of the Client.

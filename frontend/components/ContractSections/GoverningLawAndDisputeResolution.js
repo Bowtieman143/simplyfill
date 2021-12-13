@@ -8,9 +8,9 @@ export default function GoverningLawAndDisputeResolution(props) {
         <li>
           <p>
             This Agreement shall be construed in accordance with and be subject
-            to the laws of the [your state if in you’re in the US or your
+            to the laws of the [your state if in you&apos;re in the US or your
             country]. All court proceedings relating to or arising out of this
-            Agreement shall be solved by the Courts of [your state if in you’re
+            Agreement shall be solved by the Courts of [your state if in you&apos;re
             in the US or your country].
           </p>
         </li>
@@ -26,7 +26,7 @@ export default function GoverningLawAndDisputeResolution(props) {
             If the mediation fails, then the Parties will attempt jointly to
             make a written record of those matters (if any) relating to the
             dispute which have been agreed to by them, for submission in any
-            later arbitration. The mediator’s role will cease, at the latest,
+            later arbitration. The mediator&apos;s role will cease, at the latest,
             upon commencement of any arbitration proceedings. The mediator will
             not be available to appear as a witness in the arbitration, nor to
             provide any additional evidence obtained during the mediation. The

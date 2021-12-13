@@ -11,7 +11,7 @@ export default function TransferOfIntellectualPropertyRights(props) {
             payment for the Services performed in exchange for a right to use
             the content developed for marketing and business development
             purposes, and retains ownership over the Work Product. The Service
-            Provider shall, upon the Client’s compliance with the terms of the
+            Provider shall, upon the Client&apos;s compliance with the terms of the
             Agreement and final payment for Services performed, transfer or
             convey to the Client all rights, including, without limitation,
             copyrights, patents, trade secret rights, and other intellectual
@@ -19,13 +19,13 @@ export default function TransferOfIntellectualPropertyRights(props) {
             works of authorship, Confidential Information – that have been or
             will be developed or created by the Service Provider, solely or
             jointly with others, for the Client for use in perpetuity in any
-            manner whatsoever (the ‘Work Product’). The Service Provider waives
-            any moral right in respect of the Client’s use of the Work Product.
+            manner whatsoever (the &apos;Work Product&apos;). The Service Provider waives
+            any moral right in respect of the Client&apos;s use of the Work Product.
             Notwithstanding the aforementioned clauses, the Client hereby
             agrees, irrevocably and non-exclusively, to grant the Service
             Provider a right to display the written or visual content developed
             by the Service Provider for the Client in advancing the Service
-            Provider’s business development and marketing strategy.
+            Provider&apos;s business development and marketing strategy.
             Notwithstanding the aforementioned, the Service shall retain
             ownership to certain aspects of the Work Product:
           </p>
@@ -46,7 +46,7 @@ export default function TransferOfIntellectualPropertyRights(props) {
             ideas, concepts, techniques, inventions, processes, works of
             authorship, Confidential Information or trade secrets – that have
             been or will be developed or created by the Service Provider, solely
-            or jointly with others, for the Client (the ‘Work Product’). The
+            or jointly with others, for the Client (the &apos;Work Product&apos;). The
             Service Provider reserves the right to use the intellectual property
             rights for display, publication, advertising or other purposes. Upon
             receipt of final payment, Client grants the Service Provider a
