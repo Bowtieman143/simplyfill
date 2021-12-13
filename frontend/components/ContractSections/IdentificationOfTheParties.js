@@ -36,7 +36,7 @@ export default function IdentificationOfTheParties(props) {
             By accepting this Agreement and subject to the terms and conditions
             herein, the Service Provider agrees to provide{" "}
             {selectedServices.map((service) => (
-              <span className="entered-data">{`${service.name} `}</span>
+              <span className="entered-data" key={`identification-${service.name}`}>{`${service.name} `}</span>
             ))}{" "}
             (the 'Services') to the Client in connection with its business
             operations.

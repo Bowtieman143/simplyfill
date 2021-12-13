@@ -18,7 +18,7 @@ export default function EngagementAndServices(props) {
             The Client hereby engages the Service Provider to provide and
             perform the following Services in connection with{" "}
             {selectedServices.map((service) => (
-              <span className="entered-data">
+              <span className="entered-data" key={`contract-engagemnt-${service.name}`}>
                 {`${service.name}`}
                 {selectedServices.length > 1 ? " / " : ""}
               </span>
@@ -27,7 +27,7 @@ export default function EngagementAndServices(props) {
           </p>
           <ol>
             {selectedSubServices.map((subService) => (
-              <li>
+              <li key={`engagement-${subService}`}>
                 <p><span className="entered-data">{subService}</span></p>
               </li>
             ))}
@@ -45,7 +45,7 @@ export default function EngagementAndServices(props) {
             </p>
             <ol>
               {selectedRetainerSubServices.map((subService) => (
-                <li>
+                <li key={`retainer-engagement-${subService}`}>
                   <p><span className="entered-data">{subService}</span></p>
                 </li>
               ))}

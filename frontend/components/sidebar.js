@@ -103,7 +103,7 @@ export default function Sidebar(props) {
                     type="checkbox"
                     id={`service-${service.name}`}
                     label={service.name}
-                    key={service.name}
+                    key={`provided-service-${service.name}`}
                     onChange={(e) => {
                       if (e.target.checked === true) {
                         setSelectedServices([...selectedServices, service]);
@@ -144,7 +144,7 @@ export default function Sidebar(props) {
             <h5 className="mt-4 mb-4">Single Project</h5>
             <Row>
               {selectedServices.map((service) => (
-                <>
+                <div key={`single-project-${service.name}-group`}>
                   <h6 className="mb-3">{service.name}</h6>
                   <Form.Group className="mb-4">
                     {service.subServices.map((subService) => (
@@ -152,7 +152,7 @@ export default function Sidebar(props) {
                         type="checkbox"
                         id={`oneoff-service-${subService}`}
                         label={subService}
-                        key={subService}
+                        key={`single-project-subservice-${subService}`}
                         onChange={(e) => {
                           if (e.target.checked === true) {
                             setSelectedSubServices([
@@ -171,7 +171,7 @@ export default function Sidebar(props) {
                       />
                     ))}
                   </Form.Group>
-                </>
+                </div>
               ))}
             </Row>
 
@@ -181,7 +181,7 @@ export default function Sidebar(props) {
                 <h5 className="mt-4 mb-4">Retainer Work</h5>
                 <Row>
                   {selectedServices.map((service) => (
-                    <>
+                    <div key={`single-project-${service.name}-group`}>
                       <h6 className="mb-3">{service.name}</h6>
                       <Form.Group className="mb-4">
                         {service.subServices.map((subService) => (
@@ -189,7 +189,7 @@ export default function Sidebar(props) {
                             type="checkbox"
                             id={`retainer-service-${subService}`}
                             label={subService}
-                            key={subService}
+                            key={`retainer-project-subservice-${subService}`}
                             onChange={(e) => {
                               if (e.target.checked === true) {
                                 setSelectedRetainerSubServices([
@@ -209,7 +209,7 @@ export default function Sidebar(props) {
                           />
                         ))}
                       </Form.Group>
-                    </>
+                    </div>
                   ))}
                 </Row>
               </div>
