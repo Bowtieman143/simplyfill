@@ -11,7 +11,7 @@ export default function IdentificationOfTheParties(props) {
 
   return (
     <li>
-      <h5>IDENTIFICATION OF THE PARTIES</h5>
+      <h5 id="contract-section-one">IDENTIFICATION OF THE PARTIES</h5>
       <ol>
         <li>
           <p>

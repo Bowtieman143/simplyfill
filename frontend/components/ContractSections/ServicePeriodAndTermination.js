@@ -11,7 +11,7 @@ export default function ServicePeriodAndTermination(props) {
 
   return (
     <li>
-      <h5>SERVICE PERIOD AND TERMINATION</h5>
+      <h5 id="contract-section-three">SERVICE PERIOD AND TERMINATION</h5>
       <ol>
         <li>
           <p>
