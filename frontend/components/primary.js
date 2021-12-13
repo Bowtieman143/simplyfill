@@ -8,8 +8,14 @@ import OwnershipAndRisk from "./ContractSections/OwnershipAndRisk";
 import ConfidentialityAndResponsibility from "./ContractSections/ConfidentialityAndResponsibility";
 import NoCompetition from "./ContractSections/NoCompetition";
 import Warranties from "./ContractSections/Warranties";
-import IndependentContractors from "./ContractSections/IndependentContractors"
-import LimitationOfLiability from "./ContractSections/LimitationOfLiability"
+import IndependentContractors from "./ContractSections/IndependentContractors";
+import LimitationOfLiability from "./ContractSections/LimitationOfLiability";
+import TransferOfIntellectualPropertyRights from "./ContractSections/TransferOfIntellectualPropertyRights";
+import Assignment from "./ContractSections/Assignment";
+import GoverningLawAndDisputeResolution from "./ContractSections/GoverningLawAndDisputeResolution";
+import RecoveryOfLitigationExpenses from "./ContractSections/RecoveryOfLitigationExpenses";
+import General from "./ContractSections/General";
+import Severability from "./ContractSections/Severability";
 
 export default function Sidebar(props) {
   const monthNames = [
@@ -95,24 +101,12 @@ export default function Sidebar(props) {
           <Warranties />
           <IndependentContractors />
           <LimitationOfLiability />
-          <li>
-            <h4>TRANSFER OF INTELLECTUAL PROPERTY RIGHTS</h4>
-          </li>
-          <li>
-            <h4>ASSIGNMENT</h4>
-          </li>
-          <li>
-            <h4>GOVERNING LAW AND DISPUTE RESOLUTION</h4>
-          </li>
-          <li>
-            <h4>RECOVERY OF LITIGATION EXPENSES</h4>
-          </li>
-          <li>
-            <h4>GENERAL</h4>
-          </li>
-          <li>
-            <h4>SEVERABILITY</h4>
-          </li>
+          <TransferOfIntellectualPropertyRights />
+          <Assignment />
+          <GoverningLawAndDisputeResolution />
+          <RecoveryOfLitigationExpenses />
+          <General />
+          <Severability />
           <li>
             <h4>SIGNATURES</h4>
           </li>

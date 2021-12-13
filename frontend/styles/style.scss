@@ -106,13 +106,15 @@ a {
   padding-left: 0;
 }
 
-#primary #contract ol ol ol ol ul li {
+#primary #contract ol ol ol ol ul li,
+#primary #contract ol ul.dotted-list li {
   list-style: disc outside none;
   display: list-item;
   margin-left: 1em;
 }
 
-#primary #contract ol ol ol ol ul p:before {
+#primary #contract ol ol ol ol ul p:before,
+#primary #contract ol ul.dotted-list li p::before {
   background-color: red;
   counter-increment: none;
   position: static;
