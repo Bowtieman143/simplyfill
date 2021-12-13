@@ -126,6 +126,7 @@ a {
 #sidebar .carousel.slide {
   height: 72vh;
   position: relative;
+  padding-right: 20px;
   overflow-y: auto;
 }
 
@@ -142,7 +143,7 @@ a {
   top: 70vh;
   right: 20px;
   z-index: 5000;
-  padding: 15px 20px;
+  padding: 10px 15px;
   background: $primary;
 }
 

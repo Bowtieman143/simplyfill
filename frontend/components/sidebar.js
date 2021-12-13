@@ -3,6 +3,8 @@ import { Col, Form, Row, Button, Carousel, ProgressBar } from "react-bootstrap";
 
 export default function Sidebar(props) {
   const {
+    retainerPrice,
+    setRetainerPrice,
     paymentOption,
     setPaymentOption,
     projectName,
@@ -252,6 +254,20 @@ export default function Sidebar(props) {
                 }}
               />
             </Form.Group>
+            {isRetainer && (
+              <>
+                <h6 className="mt-4 mb-3">Retainer Price</h6>
+                <Form.Group className="mb-3" controlId="formsretainerprice">
+                  <Form.Control
+                    type="number"
+                    value={retainerPrice}
+                    onChange={(e) => {
+                      setRetainerPrice(e.target.value);
+                    }}
+                  />
+                </Form.Group>
+              </>
+            )}
             <h6 className="mt-4 mb-3">Payment Options</h6>
             <Form.Group className="mb-3" controlId="formsprojectprice">
               <Form.Select

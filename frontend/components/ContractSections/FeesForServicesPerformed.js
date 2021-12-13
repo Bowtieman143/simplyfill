@@ -1,7 +1,7 @@
 import { Col, Form, Row, Button } from "react-bootstrap";
 
 export default function FeesForServicesPerformed(props) {
-  const { isRetainer, projectPrice, paymentOption } = props;
+  const { isRetainer, projectPrice, paymentOption, retainerPrice } = props;
 
   return (
     <li>
@@ -124,9 +124,10 @@ export default function FeesForServicesPerformed(props) {
                 <p>
                   <span className="contract-alteration">
                     In consideration for Services rendered, the Client agrees to
-                    pay the Service Provider’s fee of [$850.00] which will be
-                    due up front on the first of each month for that month’s
-                    Services until the Agreement has ended.
+                    pay the Service Provider’s fee of{" "}
+                    <span className="contract-alteration">${retainerPrice}</span>{" "}
+                    which will be due up front on the first of each month for
+                    that month’s Services until the Agreement has ended.
                   </span>
                 </p>
               </li>

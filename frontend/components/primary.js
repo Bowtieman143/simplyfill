@@ -4,6 +4,12 @@ import EngagementAndServices from "./ContractSections/EngagementAndServices";
 import ServicePeriodAndTermination from "./ContractSections/ServicePeriodAndTermination";
 import FeesForServicesPerformed from "./ContractSections/FeesForServicesPerformed";
 import ObligationsOfTheClient from "./ContractSections/ObligationsOfTheClient";
+import OwnershipAndRisk from "./ContractSections/OwnershipAndRisk";
+import ConfidentialityAndResponsibility from "./ContractSections/ConfidentialityAndResponsibility";
+import NoCompetition from "./ContractSections/NoCompetition";
+import Warranties from "./ContractSections/Warranties";
+import IndependentContractors from "./ContractSections/IndependentContractors"
+import LimitationOfLiability from "./ContractSections/LimitationOfLiability"
 
 export default function Sidebar(props) {
   const monthNames = [
@@ -29,6 +35,7 @@ export default function Sidebar(props) {
   currentDate = mm + "/" + dd + "/" + yyyy;
 
   const {
+    retainerPrice,
     businessName,
     paymentOption,
     projectName,
@@ -75,30 +82,19 @@ export default function Sidebar(props) {
             contractStartDate={contractStartDate}
             contractEndDate={contractEndDate}
           />
-          <FeesForServicesPerformed 
+          <FeesForServicesPerformed
             isRetainer={isRetainer}
             projectPrice={projectPrice}
             paymentOption={paymentOption}
+            retainerPrice={retainerPrice}
           />
           <ObligationsOfTheClient />
-          <li>
-            <h4>OWNERSHIP AND RISK</h4>
-          </li>
-          <li>
-            <h4>CONFIDENTIALITY AND RESPONSIBILITY</h4>
-          </li>
-          <li>
-            <h4>NO COMPETITION</h4>
-          </li>
-          <li>
-            <h4>WARRANTIES</h4>
-          </li>
-          <li>
-            <h4>INDEPENDENT CONTRACTORS</h4>
-          </li>
-          <li>
-            <h4>LIMITATION OF LIABILITY</h4>
-          </li>
+          <OwnershipAndRisk />
+          <ConfidentialityAndResponsibility />
+          <NoCompetition />
+          <Warranties />
+          <IndependentContractors />
+          <LimitationOfLiability />
           <li>
             <h4>TRANSFER OF INTELLECTUAL PROPERTY RIGHTS</h4>
           </li>
