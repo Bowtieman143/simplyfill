@@ -59,7 +59,10 @@ a {
   /* overflow-y: scroll; */
 }
 
-#contract img {
+#contract img,
+#proposal img,
+#invoice img,
+#scope-of-work img {
   margin-left: -10px;
   margin-bottom: 40px;
 }
