@@ -16,12 +16,12 @@ export default function IdentificationOfTheParties(props) {
         <li>
           <p>
             This Service Agreement (the 'Agreement') is made and entered into on
-            this <span className="contract-alteration">{currentDate}</span> day
-            of <span className="contract-alteration">{currentMonth}</span> (the
+            this <span className="entered-data">{currentDate}</span> day
+            of <span className="entered-data">{currentMonth}</span> (the
             'Effective Date') by and between{" "}
-            <span className="contract-alteration">{businessName}</span> with its
+            <span className="entered-data">{businessName}</span> with its
             registered address at{" "}
-            <span className="contract-alteration">{businessAddress}</span> (the
+            <span className="entered-data">{businessAddress}</span> (the
             'Client') and Intangible Media LLC (the 'Service Provider').
           </p>
         </li>
@@ -36,7 +36,7 @@ export default function IdentificationOfTheParties(props) {
             By accepting this Agreement and subject to the terms and conditions
             herein, the Service Provider agrees to provide{" "}
             {selectedServices.map((service) => (
-              <span className="contract-alteration">{`${service.name} `}</span>
+              <span className="entered-data">{`${service.name} `}</span>
             ))}{" "}
             (the 'Services') to the Client in connection with its business
             operations.

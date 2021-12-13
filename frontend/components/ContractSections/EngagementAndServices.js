@@ -18,7 +18,7 @@ export default function EngagementAndServices(props) {
             The Client hereby engages the Service Provider to provide and
             perform the following Services in connection with{" "}
             {selectedServices.map((service) => (
-              <span className="contract-alteration">
+              <span className="entered-data">
                 {`${service.name}`}
                 {selectedServices.length > 1 ? " / " : ""}
               </span>
@@ -28,7 +28,7 @@ export default function EngagementAndServices(props) {
           <ol>
             {selectedSubServices.map((subService) => (
               <li>
-                <p><span className="contract-alteration">{subService}</span></p>
+                <p><span className="entered-data">{subService}</span></p>
               </li>
             ))}
           </ol>
@@ -40,13 +40,13 @@ export default function EngagementAndServices(props) {
               perform the following Services on an ongoing basis, in terms of a
               retainer arrangement OR to be billed on an hourly basis, in
               connection with{" "}
-              <span className="contract-alteration">{projectName}</span>. These
+              <span className="entered-data">{projectName}</span>. These
               Services shall include the following
             </p>
             <ol>
               {selectedRetainerSubServices.map((subService) => (
                 <li>
-                  <p><span className="contract-alteration">{subService}</span></p>
+                  <p><span className="entered-data">{subService}</span></p>
                 </li>
               ))}
             </ol>

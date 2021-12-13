@@ -29,7 +29,7 @@ export default function FeesForServicesPerformed(props) {
             <li>
               <p>
                 The Client agrees to pay the Service Provider a project fee of{" "}
-                <span className="contract-alteration">{`$${projectPrice}`}</span>
+                <span className="entered-data">{`$${projectPrice}`}</span>
                 . The Service Provider’s obligation to render the Services
                 mentioned in Section 2 of this Agreement is conditional upon
                 payment by the Client in the following terms (the ‘Project Based
@@ -39,7 +39,7 @@ export default function FeesForServicesPerformed(props) {
                 {paymentOption == 100 && (
                   <li>
                     <p>
-                      <span className="contract-alteration">
+                      <span className="entered-data">
                         100% upfront payment upon receipt of Invoice.
                       </span>
                     </p>
@@ -49,7 +49,7 @@ export default function FeesForServicesPerformed(props) {
                   <>
                     <li>
                       <p>
-                        <span className="contract-alteration">
+                        <span className="entered-data">
                           50% down payment upon receipt of Invoice (the ‘Down
                           Payment’).
                         </span>
@@ -57,7 +57,7 @@ export default function FeesForServicesPerformed(props) {
                     </li>
                     <li>
                       <p>
-                        <span className="contract-alteration">
+                        <span className="entered-data">
                           The remaining 50% is to be paid upon completion of the
                           website
                         </span>
@@ -65,14 +65,14 @@ export default function FeesForServicesPerformed(props) {
                     </li>
                     <li>
                       <p>
-                        <span className="contract-alteration">
+                        <span className="entered-data">
                           The completion of the project is described hereunder:
                         </span>
                       </p>
                       <ul className="dotted-list">
                         <li>
                           <p>
-                            <span className="contract-alteration">
+                            <span className="entered-data">
                               Fully functional conversion-focused e-commerce
                               website (up to 50 products).
                             </span>
@@ -80,14 +80,14 @@ export default function FeesForServicesPerformed(props) {
                         </li>
                         <li>
                           <p>
-                            <span className="contract-alteration">
+                            <span className="entered-data">
                               Optimizing each page for on-page SEO.
                             </span>
                           </p>
                         </li>
                         <li>
                           <p>
-                            <span className="contract-alteration">
+                            <span className="entered-data">
                               Marketing campaigns for AdWords and Social Media
                               (Facebook).
                             </span>
@@ -117,15 +117,15 @@ export default function FeesForServicesPerformed(props) {
         {isRetainer && (
           <li>
             <p>
-              <span className="contract-alteration">Retainer based work</span>
+              <span className="entered-data">Retainer based work</span>
             </p>
             <ol>
               <li>
                 <p>
-                  <span className="contract-alteration">
+                  <span className="entered-data">
                     In consideration for Services rendered, the Client agrees to
                     pay the Service Provider’s fee of{" "}
-                    <span className="contract-alteration">${retainerPrice}</span>{" "}
+                    <span className="entered-data">${retainerPrice}</span>{" "}
                     which will be due up front on the first of each month for
                     that month’s Services until the Agreement has ended.
                   </span>
@@ -133,7 +133,7 @@ export default function FeesForServicesPerformed(props) {
               </li>
               <li>
                 <p>
-                  <span className="contract-alteration">
+                  <span className="entered-data">
                     If such amount is not received by this date, the Service
                     Provider reserves the right to cease provision of Services
                     to the Client. If a portion of an outstanding fee remains

@@ -17,16 +17,16 @@ export default function ServicePeriodAndTermination(props) {
           <p>
             This Service Agreement (the ‘Agreement’) is made and entered into on
             this day of{" "}
-            <span className="contract-alteration">{currentMonth}</span> (the
+            <span className="entered-data">{currentMonth}</span> (the
             ‘Effective Date’) by and between with its registered address at{" "}
-            <span className="contract-alteration">{businessAddress}</span> (the
+            <span className="entered-data">{businessAddress}</span> (the
             ‘Client’) and Intangible Media LLC (the ‘Service Provider’).
             <br />
             <br />
             This Agreement shall commence on{" "}
-            <span className="contract-alteration">{contractStartDate}</span> and
+            <span className="entered-data">{contractStartDate}</span> and
             shall terminate on{" "}
-            <span className="contract-alteration">{contractEndDate}</span>.
+            <span className="entered-data">{contractEndDate}</span>.
           </p>
         </li>
         <li>
