@@ -3,13 +3,13 @@ import Head from "next/head";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import Navigation from "../components/Navigation";
 // import Primary from "../components/Primary";
-import Sidebar from "../components/Sidebar";
+import Secondary from "../components/Layouts/Secondary";
 
 export default function Index() {
   const [isRetainer, setIsRetainer] = useState(false);
-  const [retainerPrice, setRetainerPrice] = useState(0)
-  const [projectPrice, setProjectPrice] = useState(0)
-  const [paymentOption, setPaymentOption] = useState(100)
+  const [retainerPrice, setRetainerPrice] = useState(0);
+  const [projectPrice, setProjectPrice] = useState(0);
+  const [paymentOption, setPaymentOption] = useState(100);
   const [projectName, setProjectName] = useState("");
   const [businessName, setBusinessName] = useState("");
   const [businessAddress, setBusinessAddress] = useState("");
@@ -64,7 +64,7 @@ export default function Index() {
           </Col>
         </Row>
         <Row id="generator-container">
-          <Sidebar
+          <Secondary
             businessName={businessName}
             setBusinessName={setBusinessName}
             projectName={projectName}
