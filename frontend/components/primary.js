@@ -4,7 +4,7 @@ import Contract from "./Documents/Contract";
 import Invoice from "./Documents/Invoice";
 import Proposal from "./Documents/Proposal";
 import ScopeOfWork from "./Documents/ScopeOfWork";
-import FunctionalComponentWithHook from "./Documents/Contract"
+import Test from "./Documents/Test";
 
 export default function Sidebar(props) {
   const [currentDocument, setCurrentDocument] = useState("contract");
@@ -59,7 +59,7 @@ export default function Sidebar(props) {
               setCurrentDocument("contract");
             }}
           >
-            Service Agreement
+            Service Agreementdfjdsfjds
           </Nav.Link>
         </Nav.Item>
         <Nav.Item>
@@ -92,10 +92,22 @@ export default function Sidebar(props) {
             Invoice
           </Nav.Link>
         </Nav.Item>
+        <Nav.Item>
+          <Nav.Link
+            eventKey="5"
+            onClick={() => {
+              setCurrentDocument("test");
+            }}
+          >
+            Test
+          </Nav.Link>
+        </Nav.Item>
       </Nav>
 
+      {currentDocument === "test" && <Test />}
+
       {currentDocument === "proposal" && (
-        <Proposal 
+        <Proposal
           currentMonth={currentMonth}
           currentDate={currentDate}
           retainerPrice={retainerPrice}
