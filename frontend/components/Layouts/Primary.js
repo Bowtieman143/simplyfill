@@ -6,11 +6,11 @@ import Contract from "../Documents/Contract";
 import Invoice from "../Documents/Invoice";
 import Proposal from "../Documents/Proposal";
 import ScopeOfWork from "../Documents/ScopeOfWork";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFileDownload,
-  faClipboardCheck,
-} from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import {
+//   faFileDownload,
+//   faClipboardCheck,
+// } from "@fortawesome/free-solid-svg-icons";
 
 export default function Primary(props) {
   const [currentDocument, setCurrentDocument] = useState("contract");
@@ -86,7 +86,7 @@ export default function Primary(props) {
     // Good
     return (
       <Button variant="primary" className="text-white py-2 px-3">
-        Download <FontAwesomeIcon icon={faFileDownload} size="xs" />
+        Download 
       </Button>
     ); // eslint-disable-line max-len
   }, []);
@@ -163,7 +163,7 @@ export default function Primary(props) {
               variant="outline-primary"
               className="py-2 px-3"
             >
-              Copy Text <FontAwesomeIcon icon={faClipboardCheck} size="xs" />
+              Copy Text
             </Button>
           </Nav.Item>
         </Nav>
