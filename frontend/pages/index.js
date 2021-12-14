@@ -5,7 +5,7 @@ import Navigation from "../components/Navigation";
 import Primary from "../components/Primary";
 import Sidebar from "../components/Sidebar";
 
-export default function Home() {
+export default function Index() {
   const [isRetainer, setIsRetainer] = useState(false);
   const [retainerPrice, setRetainerPrice] = useState(0)
   const [projectPrice, setProjectPrice] = useState(0)
