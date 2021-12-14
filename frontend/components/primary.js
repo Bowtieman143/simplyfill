@@ -4,6 +4,7 @@ import Contract from "./Documents/Contract";
 import Invoice from "./Documents/Invoice";
 import Proposal from "./Documents/Proposal";
 import ScopeOfWork from "./Documents/ScopeOfWork";
+import FunctionalComponentWithHook from "./Documents/Contract"
 
 export default function Sidebar(props) {
   const [currentDocument, setCurrentDocument] = useState("contract");

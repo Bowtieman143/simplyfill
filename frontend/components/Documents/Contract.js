@@ -35,7 +35,7 @@ export default function Contract(props) {
     currentDate,
     currentMonth,
   } = props;
-
+  
   return (
     <div id="contract-container">
       <div id="contract">
