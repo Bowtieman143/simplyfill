@@ -12,7 +12,7 @@ import {
   faClipboardCheck,
 } from "@fortawesome/free-solid-svg-icons";
 
-export default function Sidebar(props) {
+export default function Primary(props) {
   const [currentDocument, setCurrentDocument] = useState("contract");
 
   const monthNames = [
