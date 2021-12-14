@@ -2,7 +2,7 @@ import { useState } from "react";
 import Head from "next/head";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import Navigation from "../components/Navigation";
-import Primary from "../components/Primary";
+import Primary from "../components/Layouts/Primary";
 import Secondary from "../components/Layouts/Secondary";
 
 export default function Index() {
