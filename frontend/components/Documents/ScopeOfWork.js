@@ -72,7 +72,7 @@ export default function ScopeOfWork(props) {
               included a straight-forward that works for most cases.
             </p>
           </Col>
-          <Col md={2}>
+          <Col sm={2}>
             <h5 className="mb-2">Date</h5>
             <p>12/03/2001</p>
           </Col>

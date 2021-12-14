@@ -47,9 +47,11 @@ export default function Sidebar(props) {
 
   return (
     <Col md={9} id="primary" className="pt-0 px-0">
+      <div className="sticky-top">
+
       <Nav
         variant="pills"
-        className="justify-content-center bg-white shadow-sm sticky-top py-4 mb-4"
+        className="justify-content-center bg-white py-4 mb-0"
         defaultActiveKey="1"
       >
         <Nav.Item>
@@ -59,7 +61,7 @@ export default function Sidebar(props) {
               setCurrentDocument("contract");
             }}
           >
-            Service Agreementdfjdsfjds
+            Service Agreement
           </Nav.Link>
         </Nav.Item>
         <Nav.Item>
@@ -92,17 +94,27 @@ export default function Sidebar(props) {
             Invoice
           </Nav.Link>
         </Nav.Item>
+      </Nav>
+      <Nav
+        className="justify-content-center bg-secondary py-2 mb-4"
+        defaultActiveKey="proposal-document"
+      >
         <Nav.Item>
           <Nav.Link
-            eventKey="5"
-            onClick={() => {
-              setCurrentDocument("test");
-            }}
+            eventKey="proposal-document"
           >
-            Test
+            Download Document
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link
+            eventKey="copy-document"
+          >
+            Copy Document
           </Nav.Link>
         </Nav.Item>
       </Nav>
+      </div>
 
       {currentDocument === "test" && <Test />}
 

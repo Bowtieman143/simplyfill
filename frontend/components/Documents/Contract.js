@@ -40,14 +40,13 @@ export default function Contract(props) {
   } = props;
 
   const [removeStyles, setRemoveStyles] = useState(false);
-
-  const componentRef = useRef(null);
-
   const [loading, setLoading] = useState(false);
+  const componentRef = useRef(null);
 
   const handleAfterPrint = useCallback(() => {
     console.log("`onAfterPrint` called");
     setRemoveStyles(false);
+    setLoading(false);
   }, []);
 
   const handleBeforePrint = useCallback(() => {
@@ -74,6 +73,7 @@ export default function Contract(props) {
     // Good
     return (
       <Button
+        id="contract-download-document-btn"
         variant="primary"
         className="text-white rounded-0 sticky-top py-2 px-3"
       >

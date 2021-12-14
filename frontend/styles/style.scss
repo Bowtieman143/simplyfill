@@ -1,5 +1,6 @@
 $dark: #15233b;
 $primary: #ee673e;
+$secondary: #ececec;
 
 html,
 body {
@@ -69,6 +70,10 @@ a {
   padding: 0;
   box-shadow: none;
   background-color: #ffffff;
+}
+
+#proposal #contract-container #contract-download-document-btn {
+  display: none;
 }
 
 #contract.pdf-document,
