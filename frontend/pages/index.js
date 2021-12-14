@@ -2,7 +2,7 @@ import { useState } from "react";
 import Head from "next/head";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import Navigation from "../components/Navigation";
-// import Primary from "../components/Primary";
+import Primary from "../components/Primary";
 import Secondary from "../components/Layouts/Secondary";
 
 export default function Index() {
@@ -92,7 +92,7 @@ export default function Index() {
             retainerPrice={retainerPrice}
             setRetainerPrice={setRetainerPrice}
           />
-          {/* <Primary
+          <Primary
             businessName={businessName}
             projectName={projectName}
             businessAddress={businessAddress}
@@ -105,7 +105,7 @@ export default function Index() {
             projectPrice={projectPrice}
             paymentOption={paymentOption}
             retainerPrice={retainerPrice}
-          /> */}
+          />
         </Row>
       </Container>
     </div>
