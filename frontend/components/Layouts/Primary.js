@@ -2,10 +2,10 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { Button } from "react-bootstrap";
 import ReactToPrint from "react-to-print";
 import { Col, Form, Row, NavDropdown, Nav } from "react-bootstrap";
-import Contract from "./Documents/Contract";
-import Invoice from "./Documents/Invoice";
-import Proposal from "./Documents/Proposal";
-import ScopeOfWork from "./Documents/ScopeOfWork";
+import Contract from "../Documents/Contract";
+import Invoice from "../Documents/Invoice";
+import Proposal from "../Documents/Proposal";
+import ScopeOfWork from "../Documents/ScopeOfWork";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFileDownload,
