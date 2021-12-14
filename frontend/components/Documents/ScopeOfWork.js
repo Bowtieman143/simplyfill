@@ -7,7 +7,7 @@ export default function ScopeOfWork(props) {
   return (
     <div id="scope-container">
       <div id="scope">
-      <DocumentLogo />
+        <DocumentLogo />
         <Row className="mb-5">
           <Col>
             <h5>
@@ -35,7 +35,9 @@ export default function ScopeOfWork(props) {
         </Row>
         <Row>
           <Col>
-          <h4 className="fw-bold mt-4 mb-5">Project Description and Deliverables</h4>
+            <h4 className="fw-bold mt-4 mb-4">
+              Project Description and Deliverables
+            </h4>
           </Col>
         </Row>
         <Row className="mb-4">

@@ -76,10 +76,10 @@ a {
   display: none;
 }
 
-#contract.pdf-document,
-#invoice.pdf-document,
-#scope.pdf-document,
-#proposal.pdf-document {
+section.pdf-document #contract,
+section.pdf-document #invoice,
+section.pdf-document #scope,
+section.pdf-document #proposal {
   max-width: 100%;
   width: 100%;
   // padding-top: 0.75in;

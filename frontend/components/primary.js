@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
+import { Button } from "react-bootstrap";
+import ReactToPrint from "react-to-print";
 import { Col, Form, Row, NavDropdown, Nav } from "react-bootstrap";
 import Contract from "./Documents/Contract";
 import Invoice from "./Documents/Invoice";
@@ -45,128 +47,172 @@ export default function Sidebar(props) {
     contractEndDate,
   } = props;
 
+  const [removeStyles, setRemoveStyles] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const componentRef = useRef(null);
+
+  const handleAfterPrint = useCallback(() => {
+    console.log("`onAfterPrint` called");
+    setRemoveStyles(false);
+    setLoading(false);
+  }, []);
+
+  const handleBeforePrint = useCallback(() => {
+    console.log("`onBeforePrint` called");
+    setLoading(false);
+  }, []);
+
+  const handleOnBeforeGetContent = useCallback(() => {
+    console.log("`onBeforeGetContent` called");
+    setLoading(true);
+    setRemoveStyles(true);
+  }, [setLoading]);
+
+  const reactToPrintContent = useCallback(() => {
+    return componentRef.current;
+  }, [componentRef.current]);
+
+  const ReactToPrintTrigger = useCallback(() => {
+    // NOTE: could just as easily return <SomeComponent />. Do NOT pass an `onClick` prop
+    // to the root node of the returned component as it will be overwritten.
+
+    // Bad: the `onClick` here will be overwritten by `react-to-print`
+    // return <button onClick={() => alert('This will not work')}>Print this out!</button>;
+
+    // Good
+    return (
+      <Button variant="primary" className="text-white py-2 px-3">
+        Download
+      </Button>
+    ); // eslint-disable-line max-len
+  }, []);
+
   return (
     <Col md={9} id="primary" className="pt-0 px-0">
-      <div className="sticky-top">
+      {loading && <p className="indicator">onBeforeGetContent: Loading...</p>}
 
-      <Nav
-        variant="pills"
-        className="justify-content-center bg-white py-4 mb-0"
-        defaultActiveKey="1"
-      >
-        <Nav.Item>
-          <Nav.Link
-            eventKey="1"
-            onClick={() => {
-              setCurrentDocument("contract");
-            }}
-          >
-            Service Agreement
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link
-            eventKey="2"
-            onClick={() => {
-              setCurrentDocument("scopeOfWork");
-            }}
-          >
-            Scope of Work
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link
-            eventKey="3"
-            onClick={() => {
-              setCurrentDocument("proposal");
-            }}
-          >
-            Proposal
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link
-            eventKey="4"
-            onClick={() => {
-              setCurrentDocument("invoice");
-            }}
-          >
-            Invoice
-          </Nav.Link>
-        </Nav.Item>
-      </Nav>
-      <Nav
-        className="justify-content-center bg-secondary py-2 mb-4"
-        defaultActiveKey="proposal-document"
-      >
-        <Nav.Item>
-          <Nav.Link
-            eventKey="proposal-document"
-          >
-            Download Document
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link
-            eventKey="copy-document"
-          >
-            Copy Document
-          </Nav.Link>
-        </Nav.Item>
-      </Nav>
+      <div className="sticky-top">
+        <Nav
+          variant="pills"
+          className="justify-content-center bg-white py-4 mb-0"
+          defaultActiveKey="1"
+        >
+          <Nav.Item>
+            <Nav.Link
+              eventKey="1"
+              onClick={() => {
+                setCurrentDocument("contract");
+              }}
+            >
+              Service Agreement
+            </Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link
+              eventKey="2"
+              onClick={() => {
+                setCurrentDocument("scopeOfWork");
+              }}
+            >
+              Scope of Work
+            </Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link
+              eventKey="3"
+              onClick={() => {
+                setCurrentDocument("proposal");
+              }}
+            >
+              Proposal
+            </Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link
+              eventKey="4"
+              onClick={() => {
+                setCurrentDocument("invoice");
+              }}
+            >
+              Invoice
+            </Nav.Link>
+          </Nav.Item>
+        </Nav>
+        <Nav
+          className="justify-content-center bg-secondary py-2 mb-4"
+          defaultActiveKey="proposal-document"
+        >
+          <ReactToPrint
+            content={reactToPrintContent}
+            documentTitle="AwesomeFileName"
+            onAfterPrint={handleAfterPrint}
+            onBeforeGetContent={handleOnBeforeGetContent}
+            onBeforePrint={handleBeforePrint}
+            removeAfterPrint
+            trigger={ReactToPrintTrigger}
+          />
+          <Nav.Item>
+            <Nav.Link eventKey="copy-document">Copy Document</Nav.Link>
+          </Nav.Item>
+        </Nav>
       </div>
 
-      {currentDocument === "test" && <Test />}
+      <section
+        ref={componentRef}
+        className={removeStyles ? "pdf-document" : ""}
+      >
+        {currentDocument === "test" && <Test />}
 
-      {currentDocument === "proposal" && (
-        <Proposal
-          currentMonth={currentMonth}
-          currentDate={currentDate}
-          retainerPrice={retainerPrice}
-          businessName={businessName}
-          paymentOption={paymentOption}
-          projectName={projectName}
-          projectPrice={projectPrice}
-          businessAddress={businessAddress}
-          selectedServices={selectedServices}
-          selectedSubServices={selectedSubServices}
-          isRetainer={isRetainer}
-          selectedRetainerSubServices={selectedRetainerSubServices}
-          contractStartDate={contractStartDate}
-          contractEndDate={contractEndDate}
-        />
-      )}
+        {currentDocument === "proposal" && (
+          <Proposal
+            currentMonth={currentMonth}
+            currentDate={currentDate}
+            retainerPrice={retainerPrice}
+            businessName={businessName}
+            paymentOption={paymentOption}
+            projectName={projectName}
+            projectPrice={projectPrice}
+            businessAddress={businessAddress}
+            selectedServices={selectedServices}
+            selectedSubServices={selectedSubServices}
+            isRetainer={isRetainer}
+            selectedRetainerSubServices={selectedRetainerSubServices}
+            contractStartDate={contractStartDate}
+            contractEndDate={contractEndDate}
+          />
+        )}
 
-      {currentDocument === "invoice" && (
-        <Invoice
-          businessName={businessName}
-          businessAddress={businessAddress}
-          currentDate={currentDate}
-        />
-      )}
+        {currentDocument === "invoice" && (
+          <Invoice
+            businessName={businessName}
+            businessAddress={businessAddress}
+            currentDate={currentDate}
+          />
+        )}
 
-      {currentDocument === "scopeOfWork" && (
-        <ScopeOfWork businessName={businessName} />
-      )}
+        {currentDocument === "scopeOfWork" && (
+          <ScopeOfWork businessName={businessName} />
+        )}
 
-      {currentDocument === "contract" && (
-        <Contract
-          currentMonth={currentMonth}
-          currentDate={currentDate}
-          retainerPrice={retainerPrice}
-          businessName={businessName}
-          paymentOption={paymentOption}
-          projectName={projectName}
-          projectPrice={projectPrice}
-          businessAddress={businessAddress}
-          selectedServices={selectedServices}
-          selectedSubServices={selectedSubServices}
-          isRetainer={isRetainer}
-          selectedRetainerSubServices={selectedRetainerSubServices}
-          contractStartDate={contractStartDate}
-          contractEndDate={contractEndDate}
-        />
-      )}
+        {currentDocument === "contract" && (
+          <Contract
+            currentMonth={currentMonth}
+            currentDate={currentDate}
+            retainerPrice={retainerPrice}
+            businessName={businessName}
+            paymentOption={paymentOption}
+            projectName={projectName}
+            projectPrice={projectPrice}
+            businessAddress={businessAddress}
+            selectedServices={selectedServices}
+            selectedSubServices={selectedSubServices}
+            isRetainer={isRetainer}
+            selectedRetainerSubServices={selectedRetainerSubServices}
+            contractStartDate={contractStartDate}
+            contractEndDate={contractEndDate}
+          />
+        )}
+      </section>
     </Col>
   );
 }
