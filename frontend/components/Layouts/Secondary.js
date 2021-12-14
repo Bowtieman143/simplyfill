@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Col, Form, Row, Button, Carousel, ProgressBar } from "react-bootstrap";
 
-export default function Sidebar(props) {
+export default function Secondary(props) {
   const {
     retainerPrice,
     setRetainerPrice,
