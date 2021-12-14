@@ -71,9 +71,9 @@ a {
   background-color: #ffffff;
 }
 
-#proposal img#contract-document-img,
-#proposal img#scope-document-img,
-#proposal img#invoice-document-img {
+#proposal #scope .document-logo,
+#proposal #contract .document-logo,
+#proposal #invoice .document-logo {
   display: none !important;
 }
 
@@ -88,14 +88,6 @@ a {
   margin-left: 0px;
   margin-bottom: 40px;
 }
-
-// #scope-of-work .row {
-//   margin-left: -10px;
-// }
-
-// #scope-of-work .row .col {
-//   margin-left: 0 !important;
-// }
 
 span.entered-data {
   background-color: #ffe91f;

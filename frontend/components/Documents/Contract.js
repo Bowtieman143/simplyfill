@@ -16,6 +16,7 @@ import GoverningLawAndDisputeResolution from "../ContractSections/GoverningLawAn
 import RecoveryOfLitigationExpenses from "../ContractSections/RecoveryOfLitigationExpenses";
 import General from "../ContractSections/General";
 import Severability from "../ContractSections/Severability";
+import DocumentLogo from "../DocumentLogo";
 
 export default function Contract(props) {
   const {
@@ -38,13 +39,7 @@ export default function Contract(props) {
   return (
     <div id="contract-container">
       <div id="contract">
-        <Image
-          src="/logo-dark.png"
-          width={180}
-          height={53}
-          className="d-inline-block align-top"
-          id="contract-document-img"
-        />
+      <DocumentLogo />
         <ol className="">
           <IdentificationOfTheParties
             businessName={businessName}

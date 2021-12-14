@@ -1,4 +1,5 @@
 import Image from "next/image";
+import DocumentLogo from "../DocumentLogo";
 
 export default function Invoice(props) {
   const { businessAddress, businessName, currentDate, showCompanyDetails } =
@@ -7,14 +8,7 @@ export default function Invoice(props) {
   return (
     <div id="invoice-container">
       <div id="invoice">
-        <Image
-          src="/logo-dark.png"
-          width={180}
-          height={53}
-          className="d-inline-block align-top"
-          id="contract-document-img"
-        />
-
+        <DocumentLogo />
         <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 border-0 padding">
           <div className="card border-0">
             {showCompanyDetails && (

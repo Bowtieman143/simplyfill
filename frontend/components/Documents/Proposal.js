@@ -2,6 +2,7 @@ import Image from "next/image";
 import ScopeOfWork from "./ScopeOfWork";
 import Contract from "./Contract";
 import Invoice from "./Invoice";
+import DocumentLogo from "../DocumentLogo";
 
 export default function Proposal(props) {
   const {
@@ -24,16 +25,10 @@ export default function Proposal(props) {
   return (
     <div id="proposal-container">
       <div id="proposal">
-        <Image
-          src="/logo-dark.png"
-          width={180}
-          height={53}
-          className="d-inline-block align-top"
-          id="contract-document-img"
-        />
+        <DocumentLogo />
         <ScopeOfWork businessName={businessName} />
 
-        <h4 className="mt-5 mb-5">Pricing / Costs</h4>
+        <h4 className="fw-bold mt-5 mb-3">Pricing / Costs</h4>
 
         <Invoice
           showCompanyDetails={false}
@@ -42,7 +37,7 @@ export default function Proposal(props) {
           currentDate={currentDate}
         />
 
-        <h4 className="mt-5 mb-5">Terms and Conditions</h4>
+        <h4 className="fw-bold mt-4 mb-5">Terms and Conditions</h4>
 
         <Contract
           currentMonth={currentMonth}
