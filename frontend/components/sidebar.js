@@ -41,6 +41,7 @@ export default function Sidebar(props) {
 
   return (
     <Col md={3} id="sidebar" className="bg-dark text-light h-100 p-4">
+      <h3 className="mb-4">Service Agreement</h3>
       <ProgressBar
         animated
         striped

@@ -38,13 +38,25 @@ a {
   box-sizing: border-box;
 }
 
+button svg {
+  width: 12px;
+  margin-left: 5px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+// #genorator-container {
+//   max-height: calc(100vh - 68px);
+//   overflow-y: hidden;
+// }
+
 #primary {
-  height: calc(100vh - 67.3px);
+  height: calc(100vh - 68px);
   overflow-y: scroll;
 }
 
-#sidebar{
-  min-height: calc(100vh - 67.3px);
+#sidebar {
+  min-height: calc(100vh - 68px);
   overflow-y: hidden;
 }
 
@@ -113,10 +125,10 @@ span.entered-data {
 }
 
 #primary {
-  background-color: #FBFBFB;
+  background-color: #fafafa;
 }
 
-#primary #contract ol { 
+#primary #contract ol {
   counter-reset: item;
 }
 
@@ -173,7 +185,7 @@ span.entered-data {
 }
 
 #sidebar .carousel.slide {
-  height: 72vh;
+  height: 65vh;
   position: relative;
   padding-right: 20px;
   overflow-y: auto;
@@ -189,8 +201,8 @@ span.entered-data {
   display: inline-block;
   width: auto;
   height: auto;
-  top: 70vh;
-  right: 20px;
+  // top: 70vh;
+  // right: 20px;
   z-index: 5000;
   padding: 10px 15px;
   background: $primary;
@@ -205,8 +217,6 @@ span.entered-data {
 #sidebar .carousel-control-prev {
   margin-right: 20px;
 }
-
-
 
 /* import bootstrap to set changes */
 @import "~bootstrap/scss/bootstrap";

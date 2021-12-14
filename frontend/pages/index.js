@@ -63,7 +63,7 @@ export default function Home() {
             <Navigation />
           </Col>
         </Row>
-        <Row>
+        <Row id="generator-container">
           <Sidebar
             businessName={businessName}
             setBusinessName={setBusinessName}

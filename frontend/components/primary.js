@@ -6,7 +6,11 @@ import Contract from "./Documents/Contract";
 import Invoice from "./Documents/Invoice";
 import Proposal from "./Documents/Proposal";
 import ScopeOfWork from "./Documents/ScopeOfWork";
-import Test from "./Documents/Test";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFileDownload,
+  faClipboardCheck,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function Sidebar(props) {
   const [currentDocument, setCurrentDocument] = useState("contract");
@@ -82,7 +86,7 @@ export default function Sidebar(props) {
     // Good
     return (
       <Button variant="primary" className="text-white py-2 px-3">
-        Download
+        Download <FontAwesomeIcon icon={faFileDownload} size="xs" />
       </Button>
     ); // eslint-disable-line max-len
   }, []);
@@ -91,10 +95,10 @@ export default function Sidebar(props) {
     <Col md={9} id="primary" className="pt-0 px-0">
       {loading && <p className="indicator">onBeforeGetContent: Loading...</p>}
 
-      <div className="sticky-top">
+      <div className="sticky-top shadow mb-5">
         <Nav
           variant="pills"
-          className="justify-content-center bg-white py-4 mb-0"
+          className="justify-content-center bg-white py-3 mb-0"
           defaultActiveKey="1"
         >
           <Nav.Item>
@@ -142,17 +146,25 @@ export default function Sidebar(props) {
           className="justify-content-center bg-secondary py-2 mb-4"
           defaultActiveKey="proposal-document"
         >
-          <ReactToPrint
-            content={reactToPrintContent}
-            documentTitle="AwesomeFileName"
-            onAfterPrint={handleAfterPrint}
-            onBeforeGetContent={handleOnBeforeGetContent}
-            onBeforePrint={handleBeforePrint}
-            removeAfterPrint
-            trigger={ReactToPrintTrigger}
-          />
-          <Nav.Item>
-            <Nav.Link eventKey="copy-document">Copy Document</Nav.Link>
+          <Nav.Item className="mx-2">
+            <ReactToPrint
+              content={reactToPrintContent}
+              documentTitle="AwesomeFileName"
+              onAfterPrint={handleAfterPrint}
+              onBeforeGetContent={handleOnBeforeGetContent}
+              onBeforePrint={handleBeforePrint}
+              removeAfterPrint
+              trigger={ReactToPrintTrigger}
+            />
+          </Nav.Item>
+          <Nav.Item className="mx-2">
+            <Button
+              id="copy-document"
+              variant="outline-primary"
+              className="py-2 px-3"
+            >
+              Copy Text <FontAwesomeIcon icon={faClipboardCheck} size="xs" />
+            </Button>
           </Nav.Item>
         </Nav>
       </div>
@@ -161,8 +173,6 @@ export default function Sidebar(props) {
         ref={componentRef}
         className={removeStyles ? "pdf-document" : ""}
       >
-        {currentDocument === "test" && <Test />}
-
         {currentDocument === "proposal" && (
           <Proposal
             currentMonth={currentMonth}
