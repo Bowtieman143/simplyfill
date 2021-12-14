@@ -1,4 +1,7 @@
+import { useState, useEffect, useRef, useCallback } from "react";
+import ReactToPrint from "react-to-print";
 import Image from "next/image";
+import { Button } from "react-bootstrap";
 import IdentificationOfTheParties from "../ContractSections/IdentificationOfTheParties";
 import EngagementAndServices from "../ContractSections/EngagementAndServices";
 import ServicePeriodAndTermination from "../ContractSections/ServicePeriodAndTermination";
@@ -35,11 +38,70 @@ export default function Contract(props) {
     currentDate,
     currentMonth,
   } = props;
-  
+
+  const [removeStyles, setRemoveStyles] = useState(false);
+
+  const componentRef = useRef(null);
+
+  const [loading, setLoading] = useState(false);
+
+  const handleAfterPrint = useCallback(() => {
+    console.log("`onAfterPrint` called");
+    setRemoveStyles(false);
+  }, []);
+
+  const handleBeforePrint = useCallback(() => {
+    console.log("`onBeforePrint` called");
+  }, []);
+
+  const handleOnBeforeGetContent = useCallback(() => {
+    console.log("`onBeforeGetContent` called");
+    setLoading(true);
+    setRemoveStyles(true);
+  }, [setLoading]);
+
+  const reactToPrintContent = useCallback(() => {
+    return componentRef.current;
+  }, [componentRef.current]);
+
+  const reactToPrintTrigger = useCallback(() => {
+    // NOTE: could just as easily return <SomeComponent />. Do NOT pass an `onClick` prop
+    // to the root node of the returned component as it will be overwritten.
+
+    // Bad: the `onClick` here will be overwritten by `react-to-print`
+    // return <button onClick={() => alert('This will not work')}>Print this out!</button>;
+
+    // Good
+    return (
+      <Button
+        variant="primary"
+        className="text-white rounded-0 sticky-top py-2 px-3"
+      >
+        Download
+      </Button>
+    ); // eslint-disable-line max-len
+  }, []);
+
   return (
     <div id="contract-container">
-      <div id="contract">
-      <DocumentLogo />
+      <ReactToPrint
+        content={reactToPrintContent}
+        documentTitle="AwesomeFileName"
+        onAfterPrint={handleAfterPrint}
+        onBeforeGetContent={handleOnBeforeGetContent}
+        onBeforePrint={handleBeforePrint}
+        removeAfterPrint
+        trigger={reactToPrintTrigger}
+      />
+
+      {loading && <p className="indicator">onBeforeGetContent: Loading...</p>}
+
+      <div
+        id="contract"
+        ref={componentRef}
+        className={removeStyles ? "pdf-document" : ""}
+      >
+        <DocumentLogo />
         <ol className="">
           <IdentificationOfTheParties
             businessName={businessName}

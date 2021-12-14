@@ -71,6 +71,20 @@ a {
   background-color: #ffffff;
 }
 
+#contract.pdf-document,
+#invoice.pdf-document,
+#scope.pdf-document,
+#proposal.pdf-document {
+  max-width: 100%;
+  width: 100%;
+  // padding-top: 0.75in;
+  // padding-bottom: 0.75in;
+  // padding-left: 0.75in;
+  // padding-right: 0.75in;
+  padding: 0;
+  box-shadow: none;
+}
+
 #proposal #scope .document-logo,
 #proposal #contract .document-logo,
 #proposal #invoice .document-logo {
