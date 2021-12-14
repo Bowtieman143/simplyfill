@@ -2,8 +2,8 @@ import { useState } from "react";
 import Head from "next/head";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import Navigation from "../components/Navigation";
-import Primary from "../components/Primary";
-import Sidebar from "../components/Sidebar";
+// import Primary from "../components/Primary";
+// import Sidebar from "../components/Sidebar";
 
 export default function Index() {
   const [isRetainer, setIsRetainer] = useState(false);
@@ -64,7 +64,7 @@ export default function Index() {
           </Col>
         </Row>
         <Row id="generator-container">
-          <Sidebar
+          {/* <Sidebar
             businessName={businessName}
             setBusinessName={setBusinessName}
             projectName={projectName}
@@ -105,7 +105,7 @@ export default function Index() {
             projectPrice={projectPrice}
             paymentOption={paymentOption}
             retainerPrice={retainerPrice}
-          />
+          /> */}
         </Row>
       </Container>
     </div>
