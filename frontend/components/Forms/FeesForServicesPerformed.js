@@ -2,7 +2,7 @@ import { Form } from "react-bootstrap";
 
 export default function FeesForServicesPerformed(props) {
   const {
-      isRetainer,
+    isRetainer,
     projectPrice,
     setProjectPrice,
     retainerPrice,

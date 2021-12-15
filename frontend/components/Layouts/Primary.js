@@ -13,8 +13,7 @@ import ScopeOfWork from "../Documents/ScopeOfWork";
 // } from "@fortawesome/free-solid-svg-icons";
 
 export default function Primary(props) {
-  const [currentDocument, setCurrentDocument] = useState("contract");
-
+  const { currentDocument, setCurrentDocument } = props;
   const monthNames = [
     "January",
     "February",
@@ -86,7 +85,7 @@ export default function Primary(props) {
     // Good
     return (
       <Button variant="dark" className="text-white py-2 px-3">
-        Download 
+        Download
       </Button>
     ); // eslint-disable-line max-len
   }, []);

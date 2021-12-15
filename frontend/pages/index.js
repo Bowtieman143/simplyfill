@@ -6,6 +6,7 @@ import Primary from "../components/Layouts/Primary";
 import Secondary from "../components/Layouts/Secondary";
 
 export default function Index() {
+  const [currentDocument, setCurrentDocument] = useState("contract");
   const [isRetainer, setIsRetainer] = useState(false);
   const [retainerPrice, setRetainerPrice] = useState(null);
   const [projectPrice, setProjectPrice] = useState(null);
@@ -65,6 +66,7 @@ export default function Index() {
         </Row>
         <Row id="generator-container" className="bg-dark">
           <Secondary
+            currentDocument={currentDocument}
             businessName={businessName}
             setBusinessName={setBusinessName}
             projectName={projectName}
@@ -93,6 +95,8 @@ export default function Index() {
             setRetainerPrice={setRetainerPrice}
           />
           <Primary
+            currentDocument={currentDocument}
+            setCurrentDocument={setCurrentDocument}
             businessName={businessName}
             projectName={projectName}
             businessAddress={businessAddress}
