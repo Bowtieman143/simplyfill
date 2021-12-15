@@ -85,7 +85,7 @@ export default function Primary(props) {
 
     // Good
     return (
-      <Button variant="primary" className="text-white py-2 px-3">
+      <Button variant="dark" className="text-white py-2 px-3">
         Download 
       </Button>
     ); // eslint-disable-line max-len
@@ -143,7 +143,7 @@ export default function Primary(props) {
           </Nav.Item>
         </Nav>
         <Nav
-          className="justify-content-center bg-secondary py-2 mb-4"
+          className="justify-content-center bg-secondary py-3 mb-4"
           defaultActiveKey="proposal-document"
         >
           <Nav.Item className="mx-2">
@@ -160,7 +160,7 @@ export default function Primary(props) {
           <Nav.Item className="mx-2">
             <Button
               id="copy-document"
-              variant="outline-primary"
+              variant="outline-dark"
               className="py-2 px-3"
             >
               Copy Text

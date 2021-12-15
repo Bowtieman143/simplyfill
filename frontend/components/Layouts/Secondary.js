@@ -40,16 +40,19 @@ export default function Secondary(props) {
   const currentProgress = (100 / 4) * (index + 1);
 
   return (
-    <Col md={3} id="sidebar" className="bg-dark text-light h-100 p-4">
-      <h3 className="mb-4">Service Agreement</h3>
-      <ProgressBar
-        animated
-        striped
-        now={currentProgress}
-        label={`${currentProgress}%`}
-        className="mb-4"
-      />
+    <Col md={3} id="sidebar" className="bg-dark text-light h-100 p-0">
+      <div className="bg-dark sticky-top px-4 pb-1 pt-3">
+        <h3 className="mb-4">Service Agreement</h3>
+        <ProgressBar
+          animated
+          striped
+          now={currentProgress}
+          label={`${currentProgress}%`}
+          className="mb-4"
+        />
+      </div>
       <Carousel
+      className="p-4"
         controls={true}
         indicators={false}
         interval={null}
@@ -57,9 +60,9 @@ export default function Secondary(props) {
         onSelect={handleSelect}
       >
         <Carousel.Item>
-          <h5 className="mb-2">1. Identification of The Parties</h5>
-          <Form className="mb-5">
-            <h5 className="mt-4 mb-3">Business Details</h5>
+          {/* <h5 className="mb-2">1. Identification of The Parties</h5> */}
+          <Form>
+            <h6 className="mb-3">Business Details</h6>
             <Row className="mb-3">
               <Form.Group as={Col} controlId="formprojectname">
                 <Form.Control
@@ -96,7 +99,7 @@ export default function Secondary(props) {
                 />
               </Form.Group>
             </Row>
-            <h5 className="mt-4 mb-3">Provided Services</h5>
+            <h6 className="mb-3">Provided Services</h6>
             <Row className="mb-3">
               <Form.Group className="mb-4" controlId="formBasicCheckbox">
                 {services.map((service) => (
@@ -124,7 +127,7 @@ export default function Secondary(props) {
           </Form>
         </Carousel.Item>
         <Carousel.Item>
-          <h5 className="mb-2">2. Engagement and Services</h5>
+          {/* <h5 className="mb-2">2. Engagement and Services</h5> */}
           <Form>
             <Row className="my-9">
               <Form.Group className="my-2" controlId="formretainercheckbox">
@@ -142,7 +145,7 @@ export default function Secondary(props) {
                 />
               </Form.Group>
             </Row>
-            <h5 className="mt-4 mb-4">Single Project</h5>
+            <h5 className="mb-4">Single Project</h5>
             <Row>
               {selectedServices.map((service) => (
                 <div key={`single-project-${service.name}-group`}>
@@ -179,7 +182,7 @@ export default function Secondary(props) {
             {isRetainer && (
               <div>
                 <hr />
-                <h5 className="mt-4 mb-4">Retainer Work</h5>
+                <h5 className="mb-4">Retainer Work</h5>
                 <Row>
                   {selectedServices.map((service) => (
                     <div key={`single-project-${service.name}-group`}>
@@ -218,9 +221,9 @@ export default function Secondary(props) {
           </Form>
         </Carousel.Item>
         <Carousel.Item>
-          <h5 className="mb-2">3. Service Period and Termination</h5>
+          {/* <h5 className="mb-2">3. Service Period and Termination</h5> */}
           <Form className="mb-5">
-            <h6 className="mt-4 mb-3">Contract Start Date</h6>
+            <h6 className="mb-3">Contract Start Date</h6>
             <Form.Group className="mb-3" controlId="formstartdate">
               <Form.Control
                 type="date"
@@ -243,9 +246,9 @@ export default function Secondary(props) {
           </Form>
         </Carousel.Item>
         <Carousel.Item>
-          <h5 className="mb-2">4. Fees For Services Performed</h5>
+          {/* <h5 className="mb-2">4. Fees For Services Performed</h5> */}
           <Form className="mb-5">
-            <h6 className="mt-4 mb-3">Project Price</h6>
+            <h6 className="mb-3">Project Price</h6>
             <Form.Group className="mb-3" controlId="formsprojectprice">
               <Form.Control
                 type="number"
@@ -269,7 +272,7 @@ export default function Secondary(props) {
                 </Form.Group>
               </>
             )}
-            <h6 className="mt-4 mb-3">Payment Options</h6>
+            <h6 className="mb-3">Payment Options</h6>
             <Form.Group className="mb-3" controlId="formsprojectprice">
               <Form.Select
                 aria-label="Default select example"

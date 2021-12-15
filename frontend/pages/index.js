@@ -63,7 +63,7 @@ export default function Index() {
             <Navigation />
           </Col>
         </Row>
-        <Row id="generator-container">
+        <Row id="generator-container" className="bg-dark">
           <Secondary
             businessName={businessName}
             setBusinessName={setBusinessName}
