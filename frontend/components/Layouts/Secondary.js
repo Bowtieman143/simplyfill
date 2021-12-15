@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Col, Form, Row, Button, Carousel, ProgressBar } from "react-bootstrap";
 import EngagementAndServices from "../Forms/Contract/EngagementAndServices";
 import FeesForServicesPerformed from "../Forms/Contract/FeesForServicesPerformed";
@@ -62,7 +62,7 @@ export default function Secondary(props) {
   const scopeCarouselCurrentProgress = (100 / 4) * (scopeCarouselIndex + 1);
   const proposalCarouselCurrentProgress =
     (100 / 4) * (proposalCarouselIndex + 1);
-  const invoiceCarouselCurrentProgress = (100 / 4) * (invoiceCarouselIndex + 1);
+  const invoiceCarouselCurrentProgress = (100 / 6) * (invoiceCarouselIndex + 1);
 
   return (
     <Col md={3} xl={2} id="sidebar" className="bg-dark text-light h-100 p-0">
@@ -157,50 +157,17 @@ export default function Secondary(props) {
             onSelect={scopeCarouselHandleSelect}
           >
             <Carousel.Item>
-              <IdentificationOfTheParties
-                projectName={projectName}
-                setProjectName={setProjectName}
-                businessName={businessName}
-                setBusinessName={setBusinessName}
-                businessAddress={businessAddress}
-                setBusinessAddress={setBusinessAddress}
-                services={services}
-                setServices={setServices}
-                selectedServices={selectedServices}
-                setSelectedServices={setSelectedServices}
-              />
+              <h1>Hellow thisi s a test here</h1>
             </Carousel.Item>
             <Carousel.Item>
-              <EngagementAndServices
-                selectedSubServices={selectedSubServices}
-                isRetainer={isRetainer}
-                setIsRetainer={setIsRetainer}
-                services={services}
-                selectedServices={selectedServices}
-                setSelectedSubServices={setSelectedSubServices}
-                selectedRetainerSubServices={selectedRetainerSubServices}
-                setSelectedRetainerSubServices={setSelectedRetainerSubServices}
-              />
+              <h1>Hellow thisi s a test here</h1>
             </Carousel.Item>
             <Carousel.Item>
-              {/* <h5 className="mb-2">3. Service Period and Termination</h5> */}
-              <ServicePeriodAndTermination
-                contractStartDate={contractStartDate}
-                setContractStartDate={setContractStartDate}
-                contractEndDate={contractEndDate}
-                setContractEndDate={setContractEndDate}
-              />
+              <h1>Hellow thisi s a test here</h1>
             </Carousel.Item>
             <Carousel.Item>
               {/* <h5 className="mb-2">4. Fees For Services Performed</h5> */}
-              <FeesForServicesPerformed
-                isRetainer={isRetainer}
-                projectPrice={projectPrice}
-                setProjectPrice={setProjectPrice}
-                retainerPrice={retainerPrice}
-                setRetainerPrice={setRetainerPrice}
-                setPaymentOption={setPaymentOption}
-              />
+              <h1>Hellow thisi s a test here</h1>
             </Carousel.Item>
           </Carousel>
         </div>
@@ -227,50 +194,17 @@ export default function Secondary(props) {
             onSelect={proposalCarouselHandleSelect}
           >
             <Carousel.Item>
-              <IdentificationOfTheParties
-                projectName={projectName}
-                setProjectName={setProjectName}
-                businessName={businessName}
-                setBusinessName={setBusinessName}
-                businessAddress={businessAddress}
-                setBusinessAddress={setBusinessAddress}
-                services={services}
-                setServices={setServices}
-                selectedServices={selectedServices}
-                setSelectedServices={setSelectedServices}
-              />
+              <h1>Hellow thisi s a test here</h1>
             </Carousel.Item>
             <Carousel.Item>
-              <EngagementAndServices
-                selectedSubServices={selectedSubServices}
-                isRetainer={isRetainer}
-                setIsRetainer={setIsRetainer}
-                services={services}
-                selectedServices={selectedServices}
-                setSelectedSubServices={setSelectedSubServices}
-                selectedRetainerSubServices={selectedRetainerSubServices}
-                setSelectedRetainerSubServices={setSelectedRetainerSubServices}
-              />
+              <h1>Hellow thisi s a test here</h1>
             </Carousel.Item>
             <Carousel.Item>
-              {/* <h5 className="mb-2">3. Service Period and Termination</h5> */}
-              <ServicePeriodAndTermination
-                contractStartDate={contractStartDate}
-                setContractStartDate={setContractStartDate}
-                contractEndDate={contractEndDate}
-                setContractEndDate={setContractEndDate}
-              />
+              <h1>Hellow thisi s a test here</h1>
             </Carousel.Item>
             <Carousel.Item>
               {/* <h5 className="mb-2">4. Fees For Services Performed</h5> */}
-              <FeesForServicesPerformed
-                isRetainer={isRetainer}
-                projectPrice={projectPrice}
-                setProjectPrice={setProjectPrice}
-                retainerPrice={retainerPrice}
-                setRetainerPrice={setRetainerPrice}
-                setPaymentOption={setPaymentOption}
-              />
+              <h1>Hellow thisi s a test here</h1>
             </Carousel.Item>
           </Carousel>
         </div>
@@ -289,6 +223,7 @@ export default function Secondary(props) {
             />
           </div>
           <Carousel
+            id="testing-carousel-slides"
             className="p-4"
             controls={true}
             indicators={false}
@@ -306,7 +241,12 @@ export default function Secondary(props) {
               <h1>Hellow thisi s a test here</h1>
             </Carousel.Item>
             <Carousel.Item>
-              {/* <h5 className="mb-2">4. Fees For Services Performed</h5> */}
+              <h1>Hellow thisi s a test here</h1>
+            </Carousel.Item>
+            <Carousel.Item>
+              <h1>Hellow thisi s a test here</h1>
+            </Carousel.Item>
+            <Carousel.Item>
               <h1>Hellow thisi s a test here</h1>
             </Carousel.Item>
           </Carousel>

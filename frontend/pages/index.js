@@ -8,8 +8,8 @@ import Secondary from "../components/Layouts/Secondary";
 export default function Index() {
   const [currentDocument, setCurrentDocument] = useState("contract");
   const [isRetainer, setIsRetainer] = useState(false);
-  const [retainerPrice, setRetainerPrice] = useState(null);
-  const [projectPrice, setProjectPrice] = useState(null);
+  const [retainerPrice, setRetainerPrice] = useState("");
+  const [projectPrice, setProjectPrice] = useState("");
   const [paymentOption, setPaymentOption] = useState(100);
   const [projectName, setProjectName] = useState("");
   const [businessName, setBusinessName] = useState("");
