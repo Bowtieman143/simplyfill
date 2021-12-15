@@ -8,36 +8,36 @@ export default function ScopeOfWork(props) {
     <div id="scope-container">
       <div id="scope">
         <DocumentLogo />
-        <Row className="mb-5">
+        <Row className="mb-3">
           <Col>
-            <h5>
+            <h6>
               {" "}
               Name of Company:{" "}
               <span className="entered-data fw-normal">Steven Peralta</span>
-            </h5>
-            <h5>
+            </h6>
+            <h6>
               Project Name:{" "}
               <span className="entered-data fw-normal">Steven Peralta</span>
-            </h5>
-            <h5>
+            </h6>
+            <h6>
               Project Manager:{" "}
               <span className="entered-data fw-normal">Steven Peralta</span>
-            </h5>
-            <h5>
+            </h6>
+            <h6>
               Prepared by:{" "}
               <span className="entered-data fw-normal">Steven Peralta</span>
-            </h5>
-            <h5>
+            </h6>
+            <h6>
               Date:{" "}
               <span className="entered-data fw-normal">Steven Peralta</span>
-            </h5>
+            </h6>
           </Col>
         </Row>
         <Row>
           <Col>
-            <h4 className="fw-bold mt-4 mb-4">
+            <h6 className="fw-bold mt-4 mb-4">
               Project Description and Deliverables
-            </h4>
+            </h6>
             <Table striped bordered hover>
               <thead>
                 <tr>
