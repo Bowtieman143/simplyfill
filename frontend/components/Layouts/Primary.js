@@ -91,7 +91,7 @@ export default function Primary(props) {
   }, []);
 
   return (
-    <Col md={9} id="primary" className="pt-0 px-0">
+    <Col md={9} xl={10} id="primary" className="pt-0 px-0">
       {loading && <p className="indicator">onBeforeGetContent: Loading...</p>}
 
       <div className="sticky-top shadow mb-5">

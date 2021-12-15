@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Col, Form, Row, Button, Carousel, ProgressBar } from "react-bootstrap";
-import EngagementAndServices from "../Forms/EngagementAndServices";
-import FeesForServicesPerformed from "../Forms/FeesForServicesPerformed";
-import IdentificationOfTheParties from "../Forms/IdentificationOfTheParties";
-import ServicePeriodAndTermination from "../Forms/ServicePeriodAndTermination";
+import EngagementAndServices from "../Forms/Contract/EngagementAndServices";
+import FeesForServicesPerformed from "../Forms/Contract/FeesForServicesPerformed";
+import IdentificationOfTheParties from "../Forms/Contract/IdentificationOfTheParties";
+import ServicePeriodAndTermination from "../Forms/Contract/ServicePeriodAndTermination";
 
 export default function Secondary(props) {
   const {
@@ -45,7 +45,7 @@ export default function Secondary(props) {
   const currentProgress = (100 / 4) * (index + 1);
 
   return (
-    <Col md={3} id="sidebar" className="bg-dark text-light h-100 p-0">
+    <Col md={3} xl={2} id="sidebar" className="bg-dark text-light h-100 p-0">
       {currentDocument == "contract" && (
         <div id="contract-document-form">
           <div className="bg-dark sticky-top px-4 pb-1 pt-3">
@@ -187,7 +187,7 @@ export default function Secondary(props) {
       )}
 
       {currentDocument == "proposal" && (
-        <div id="scope-document-form">
+        <div id="proposal-document-form">
           <div className="bg-dark sticky-top px-4 pb-1 pt-3">
             <h3 className="mb-4">Proposal</h3>
             <ProgressBar
@@ -255,8 +255,9 @@ export default function Secondary(props) {
           </Carousel>
         </div>
       )}
+
       {currentDocument == "invoice" && (
-        <div id="scope-document-form">
+        <div id="invoice-document-form">
           <div className="bg-dark sticky-top px-4 pb-1 pt-3">
             <h3 className="mb-4">Invoice</h3>
             <ProgressBar
