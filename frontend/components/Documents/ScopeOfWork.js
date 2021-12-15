@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Table } from "react-bootstrap";
 import DocumentLogo from "../DocumentLogo";
 
 export default function ScopeOfWork(props) {
@@ -38,87 +38,109 @@ export default function ScopeOfWork(props) {
             <h4 className="fw-bold mt-4 mb-4">
               Project Description and Deliverables
             </h4>
-          </Col>
-        </Row>
-        <Row className="mb-4">
-          <Col>
-            <h5 className="mb-3">Project Description</h5>
-            <p>
-              The above demonstrates how flexible the component model can be.
-              But if you didn&apos;t want to roll your own versions we&apos;ve
-              included a straight-forward that works for most cases.
-            </p>
-          </Col>
-        </Row>
-        <Row className="mb-5">
-          <Col>
-            <h5 className="mb-3">Project Deliverables</h5>
-            <p>
-              The above demonstrates how flexible the component model can be.
-              But if you didn&apos;t want to roll your own versions we&apos;ve
-              included a straight-forward that works for most cases.
-            </p>
-          </Col>
-        </Row>
-        <Row className="mb-3">
-          <Col>
-            <h4 className="fw-bold">Timeline and Breakdown</h4>
-          </Col>
-        </Row>
-        <Row className="py-3 mb-3">
-          <Col>
-            <h5 className="mb-2">Phase - One</h5>
-            <p>
-              The above demonstrates how flexible the component model can be.
-              But if you didn&apos;t want to roll your own versions we&apos;ve
-              included a straight-forward that works for most cases.
-            </p>
-          </Col>
-          <Col sm={2}>
-            <h5 className="mb-2">Date</h5>
-            <p>12/03/2001</p>
-          </Col>
-        </Row>
-        <Row className="py-3 mb-3">
-          <Col>
-            <h5 className="mb-2">Phase - Two</h5>
-            <p>
-              The above demonstrates how flexible the component model can be.
-              But if you didn&apos;t want to roll your own versions we&apos;ve
-              included a straight-forward that works for most cases.
-            </p>
-          </Col>
-          <Col md={2}>
-            <h5 className="mb-2">Date</h5>
-            <p>12/03/2001</p>
-          </Col>
-        </Row>
-        <Row className="py-3 mb-3">
-          <Col>
-            <h5 className="mb-2">Phase - Three</h5>
-            <p>
-              The above demonstrates how flexible the component model can be.
-              But if you didn&apos;t want to roll your own versions we&apos;ve
-              included a straight-forward that works for most cases.
-            </p>
-          </Col>
-          <Col md={2}>
-            <h5 className="mb-2">Date</h5>
-            <p>12/03/2001</p>
-          </Col>
-        </Row>
-        <Row className="py-3 mb-3">
-          <Col>
-            <h5 className="mb-2">Phase - Four</h5>
-            <p>
-              The above demonstrates how flexible the component model can be.
-              But if you didn&apos;t want to roll your own versions we&apos;ve
-              included a straight-forward that works for most cases.
-            </p>
-          </Col>
-          <Col md={2}>
-            <h5 className="mb-2">Date</h5>
-            <p>12/03/2001</p>
+            <Table striped bordered hover>
+              <thead>
+                <tr>
+                  <th>Phase(s)</th>
+                  <th>Description</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>One</td>
+                  <td>
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book. It has survived not only five centuries,
+                    but also the leap into electronic typesetting, remaining
+                    essentially unchanged.
+                  </td>
+                  <td>12/03/2022</td>
+                </tr>
+                <tr>
+                  <td>Two</td>
+                  <td>
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scram.
+                  </td>
+                  <td>12/03/2022</td>
+                </tr>
+                <tr>
+                  <td>Three</td>
+                  <td>
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s.
+                  </td>
+                  <td>12/03/2022</td>
+                </tr>
+                <tr>
+                  <td>Four</td>
+                  <td>
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book. It has survived not only five centuries,
+                    but also the leap into electronic typesetting.
+                  </td>
+                  <td>12/03/2022</td>
+                </tr>
+                <tr>
+                  <td>Four</td>
+                  <td>
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book. It has survived not only five centuries,
+                    but also the leap into electronic typesetting.
+                  </td>
+                  <td>12/03/2022</td>
+                </tr>
+                <tr>
+                  <td>Four</td>
+                  <td>
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book. It has survived not only five centuries,
+                    but also the leap into electronic typesetting.
+                  </td>
+                  <td>12/03/2022</td>
+                </tr>
+                <tr>
+                  <td>Four</td>
+                  <td>
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book. It has survived not only five centuries,
+                    but also the leap into electronic typesetting.
+                  </td>
+                  <td>12/03/2022</td>
+                </tr>
+                <tr>
+                  <td>Four</td>
+                  <td>
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book. It has survived not only five centuries,
+                    but also the leap into electronic typesetting.
+                  </td>
+                  <td>12/03/2022</td>
+                </tr>
+              </tbody>
+            </Table>
           </Col>
         </Row>
       </div>

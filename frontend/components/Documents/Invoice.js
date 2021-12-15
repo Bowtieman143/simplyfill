@@ -1,5 +1,6 @@
 import Image from "next/image";
 import DocumentLogo from "../DocumentLogo";
+import {Table} from "react-bootstrap";
 
 export default function Invoice(props) {
   const { businessAddress, businessName, currentDate, showCompanyDetails } =
@@ -52,7 +53,7 @@ export default function Invoice(props) {
                 </div>
               )}
               <div className="table-responsive-sm">
-                <table className="table table-striped">
+                <Table striped bordered hover>
                   <thead>
                     <tr>
                       <th className="center">#</th>
@@ -101,7 +102,7 @@ export default function Invoice(props) {
                       <td className="right">$5000</td>
                     </tr>
                   </tbody>
-                </table>
+                </Table>
               </div>
               <div className="row">
                 <div className="offset-lg-6 col-lg-6 col-sm-5 mr-auto">
