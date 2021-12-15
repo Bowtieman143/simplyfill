@@ -185,6 +185,145 @@ export default function Secondary(props) {
           </Carousel>
         </div>
       )}
+
+      {currentDocument == "proposal" && (
+        <div id="scope-document-form">
+          <div className="bg-dark sticky-top px-4 pb-1 pt-3">
+            <h3 className="mb-4">Proposal</h3>
+            <ProgressBar
+              animated
+              striped
+              now={currentProgress}
+              label={`${currentProgress}% Done`}
+              className="mb-4"
+            />
+          </div>
+          <Carousel
+            className="p-4"
+            controls={true}
+            indicators={false}
+            interval={null}
+            activeIndex={index}
+            onSelect={handleSelect}
+          >
+            <Carousel.Item>
+              <IdentificationOfTheParties
+                projectName={projectName}
+                setProjectName={setProjectName}
+                businessName={businessName}
+                setBusinessName={setBusinessName}
+                businessAddress={businessAddress}
+                setBusinessAddress={setBusinessAddress}
+                services={services}
+                setServices={setServices}
+                selectedServices={selectedServices}
+                setSelectedServices={setSelectedServices}
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <EngagementAndServices
+                selectedSubServices={selectedSubServices}
+                isRetainer={isRetainer}
+                setIsRetainer={setIsRetainer}
+                services={services}
+                selectedServices={selectedServices}
+                setSelectedSubServices={setSelectedSubServices}
+                selectedRetainerSubServices={selectedRetainerSubServices}
+                setSelectedRetainerSubServices={setSelectedRetainerSubServices}
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              {/* <h5 className="mb-2">3. Service Period and Termination</h5> */}
+              <ServicePeriodAndTermination
+                contractStartDate={contractStartDate}
+                setContractStartDate={setContractStartDate}
+                contractEndDate={contractEndDate}
+                setContractEndDate={setContractEndDate}
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              {/* <h5 className="mb-2">4. Fees For Services Performed</h5> */}
+              <FeesForServicesPerformed
+                isRetainer={isRetainer}
+                projectPrice={projectPrice}
+                setProjectPrice={setProjectPrice}
+                retainerPrice={retainerPrice}
+                setRetainerPrice={setRetainerPrice}
+                setPaymentOption={setPaymentOption}
+              />
+            </Carousel.Item>
+          </Carousel>
+        </div>
+      )}
+      {currentDocument == "invoice" && (
+        <div id="scope-document-form">
+          <div className="bg-dark sticky-top px-4 pb-1 pt-3">
+            <h3 className="mb-4">Invoice</h3>
+            <ProgressBar
+              animated
+              striped
+              now={currentProgress}
+              label={`${currentProgress}% Done`}
+              className="mb-4"
+            />
+          </div>
+          <Carousel
+            className="p-4"
+            controls={true}
+            indicators={false}
+            interval={null}
+            activeIndex={index}
+            onSelect={handleSelect}
+          >
+            <Carousel.Item>
+              <IdentificationOfTheParties
+                projectName={projectName}
+                setProjectName={setProjectName}
+                businessName={businessName}
+                setBusinessName={setBusinessName}
+                businessAddress={businessAddress}
+                setBusinessAddress={setBusinessAddress}
+                services={services}
+                setServices={setServices}
+                selectedServices={selectedServices}
+                setSelectedServices={setSelectedServices}
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <EngagementAndServices
+                selectedSubServices={selectedSubServices}
+                isRetainer={isRetainer}
+                setIsRetainer={setIsRetainer}
+                services={services}
+                selectedServices={selectedServices}
+                setSelectedSubServices={setSelectedSubServices}
+                selectedRetainerSubServices={selectedRetainerSubServices}
+                setSelectedRetainerSubServices={setSelectedRetainerSubServices}
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              {/* <h5 className="mb-2">3. Service Period and Termination</h5> */}
+              <ServicePeriodAndTermination
+                contractStartDate={contractStartDate}
+                setContractStartDate={setContractStartDate}
+                contractEndDate={contractEndDate}
+                setContractEndDate={setContractEndDate}
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              {/* <h5 className="mb-2">4. Fees For Services Performed</h5> */}
+              <FeesForServicesPerformed
+                isRetainer={isRetainer}
+                projectPrice={projectPrice}
+                setProjectPrice={setProjectPrice}
+                retainerPrice={retainerPrice}
+                setRetainerPrice={setRetainerPrice}
+                setPaymentOption={setPaymentOption}
+              />
+            </Carousel.Item>
+          </Carousel>
+        </div>
+      )}
     </Col>
   );
 }
