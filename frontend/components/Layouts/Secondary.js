@@ -4,6 +4,7 @@ import EngagementAndServices from "../Forms/Contract/EngagementAndServices";
 import FeesForServicesPerformed from "../Forms/Contract/FeesForServicesPerformed";
 import IdentificationOfTheParties from "../Forms/Contract/IdentificationOfTheParties";
 import ServicePeriodAndTermination from "../Forms/Contract/ServicePeriodAndTermination";
+import BusinessDetails from "../Forms/ScopeOfWork/BusinessDetails";
 
 export default function Secondary(props) {
   const {
@@ -157,7 +158,18 @@ export default function Secondary(props) {
             onSelect={scopeCarouselHandleSelect}
           >
             <Carousel.Item>
-              <h1>Hellow thisi s a test here</h1>
+              <BusinessDetails
+                projectName={projectName}
+                setProjectName={setProjectName}
+                businessName={businessName}
+                setBusinessName={setBusinessName}
+                businessAddress={businessAddress}
+                setBusinessAddress={setBusinessAddress}
+                services={services}
+                setServices={setServices}
+                selectedServices={selectedServices}
+                setSelectedServices={setSelectedServices}
+              />
             </Carousel.Item>
             <Carousel.Item>
               <h1>Hellow thisi s a test here</h1>

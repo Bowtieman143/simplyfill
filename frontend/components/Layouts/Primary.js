@@ -52,6 +52,7 @@ export default function Primary(props) {
 
   const [removeStyles, setRemoveStyles] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [showSecondaryNav, setShowSecondaryNav] = useState(true);
   const componentRef = useRef(null);
 
   const handleAfterPrint = useCallback(() => {
@@ -75,6 +76,89 @@ export default function Primary(props) {
     return componentRef.current;
   }, [componentRef.current]);
 
+  const pageStyle = `
+    @media print {
+      html, body {
+        height: initial !important;
+        overflow: initial !important;
+        -webkit-print-color-adjust: exact;
+      }
+    }
+    
+    @page {
+      size: auto;
+      margin: .75in;
+    }
+
+    @media all {
+
+      #contract ol {
+        counter-reset: item;
+      }
+      
+      #contract ol li {
+        display: block;
+        position: relative;
+        margin-bottom: 35px;
+      }
+      
+      #contract ol li ol li {
+        display: block;
+        position: relative;
+        margin-bottom: 15px;
+      }
+      
+      #contract ol li h5 {
+        margin-bottom: 25px;
+      }
+      
+      #contract ol p:before,
+      #contract ol h5:before {
+        content: counters(item, ".") " ";
+        counter-increment: item;
+        position: absolute;
+        top: 0px;
+        left: -20px;
+      }
+
+      #contract ol ol p:before,
+      #contract ol ol h5:before {
+        content: counters(item, ".") " ";
+        counter-increment: item;
+        position: absolute;
+        top: 0px;
+        left: -40px;
+      }
+      
+      #contract ol ol ol ol {
+        padding-left: 50px;
+      }
+      
+      #contract ol ol ol ol ul {
+        padding-left: 0;
+      }
+      
+      #contract ol ol ol ol ul li,
+      #contract ol ul.dotted-list li {
+        list-style: disc outside none;
+        display: list-item;
+        margin-left: 1em;
+      }
+      
+      #contract ol ol ol ol ul p:before,
+      #contract ol ul.dotted-list li p::before {
+        background-color: red;
+        counter-increment: none;
+        position: static;
+        content: none;
+      }
+      
+      #contract ol ol ol ol p:before {
+        left: -60px;
+      }
+    }
+  `;
+
   const ReactToPrintTrigger = useCallback(() => {
     // NOTE: could just as easily return <SomeComponent />. Do NOT pass an `onClick` prop
     // to the root node of the returned component as it will be overwritten.
@@ -84,7 +168,7 @@ export default function Primary(props) {
 
     // Good
     return (
-      <Button variant="dark" className="text-white py-2 px-3">
+      <Button variant="light" className="py-2 px-3">
         Download
       </Button>
     ); // eslint-disable-line max-len
@@ -94,10 +178,10 @@ export default function Primary(props) {
     <Col md={9} xl={10} id="primary" className="pt-0 px-0">
       {loading && <p className="indicator">onBeforeGetContent: Loading...</p>}
 
-      <div className="sticky-top shadow mb-5">
+      <div className="sticky-top mb-5">
         <Nav
           variant="pills"
-          className="justify-content-center bg-white py-3 mb-0"
+          className="justify-content-center shadow bg-white py-3 mb-0"
           defaultActiveKey="1"
         >
           <Nav.Item>
@@ -142,8 +226,9 @@ export default function Primary(props) {
           </Nav.Item>
         </Nav>
         <Nav
-          className="justify-content-center bg-secondary py-3 mb-4"
-          defaultActiveKey="proposal-document"
+          className={`justify-content-center shadow bg-dark py-3 mb-0 ${
+            showSecondaryNav && "d-none"
+          }`}
         >
           <Nav.Item className="mx-2">
             <ReactToPrint
@@ -154,18 +239,35 @@ export default function Primary(props) {
               onBeforePrint={handleBeforePrint}
               removeAfterPrint
               trigger={ReactToPrintTrigger}
+              pageStyle={pageStyle}
             />
           </Nav.Item>
           <Nav.Item className="mx-2">
-            <Button
-              id="copy-document"
-              variant="outline-dark"
-              className="py-2 px-3"
-            >
+            <Button id="copy-document" variant="light" className="py-2 px-3">
               Copy Text
             </Button>
           </Nav.Item>
+          <Nav.Item className="mx-2">
+            <Button id="copy-document" variant="light" className="py-2 px-3">
+              Email
+            </Button>
+          </Nav.Item>
+          <Nav.Item className="mx-2">
+            <Button id="copy-document" variant="light" className="py-2 px-3">
+              Link to Document
+            </Button>
+          </Nav.Item>
         </Nav>
+        <div id="secondary-navbar-trigger-container">
+          <Button
+            className="rounded-0 text-right text-white ml-auto"
+            onClick={(e) => {
+              setShowSecondaryNav(!showSecondaryNav);
+            }}
+          >
+            +
+          </Button>
+        </div>
       </div>
 
       <section

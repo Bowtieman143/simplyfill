@@ -2,6 +2,29 @@ $dark: #15233b;
 $primary: #ee673e;
 $secondary: #ececec;
 
+$grid-columns:      12;
+$grid-gutter-width: 30px;
+
+$grid-breakpoints: (
+  // Extra small screen / phone
+  xs: 0,
+  // Small screen / phone
+  sm: 576px,
+  // Medium screen / tablet
+  md: 768px,
+  // Large screen / desktop
+  lg: 992px,
+  // Extra large screen / wide desktop
+  xl: 1500px
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1300px
+);
+
 html,
 body {
   padding: 0;
@@ -215,6 +238,10 @@ span.entered-data {
 
 #sidebar .carousel-control-prev {
   margin-right: 20px;
+}
+
+div#secondary-navbar-trigger-container {
+  text-align: end;
 }
 
 /* import bootstrap to set changes */
