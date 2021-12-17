@@ -110,9 +110,9 @@ export default function Contract(props) {
           <li>
             <h5>SIGNATURES</h5>
             <Row>
-              <Col>
+              <Col xs={6}>
                 {serviceProviderSignatureImageUrl ? (
-                  <img src={serviceProviderSignatureImageUrl} />
+                  <img src={serviceProviderSignatureImageUrl} className="signature-image"/>
                 ) : (
                   <>
                     <SignaturePad
@@ -130,9 +130,9 @@ export default function Contract(props) {
                   </>
                 )}
               </Col>
-              <Col>
+              <Col xs={6}>
                 {clientSignatureImageUrl ? (
-                  <img src={clientSignatureImageUrl} />
+                  <img src={clientSignatureImageUrl} className="signature-image"/>
                 ) : (
                   <>
                     <SignaturePad

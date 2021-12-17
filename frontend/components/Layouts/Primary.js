@@ -103,13 +103,14 @@ export default function Primary(props) {
     
     @page {
       size: auto;
-      margin: 1.75in;
+      margin: 1in;
     }
 
     @media all {
 
       #contract ol {
         counter-reset: item;
+        padding-left: 2.9rem;
       }
       
       #contract ol li {
@@ -134,7 +135,7 @@ export default function Primary(props) {
         counter-increment: item;
         position: absolute;
         top: 0px;
-        left: -20px;
+        left: -40px;
       }
 
       #contract ol ol p:before,
