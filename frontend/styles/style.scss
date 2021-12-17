@@ -62,8 +62,7 @@ a {
 }
 
 button svg {
-  width: 12px;
-  margin-left: 5px;
+  width: 17px;
   display: inline-block;
   vertical-align: middle;
 }
@@ -93,6 +92,7 @@ button svg {
   padding: 100px 80px;
   box-shadow: 0px 4px 26px 3px rgba(193, 193, 193, 0.45);
   background-color: #ffffff;
+  margin-top: -200px;
   /* overflow-y: scroll; */
 }
 
@@ -123,6 +123,7 @@ section.pdf-document #proposal {
   // padding-right: 0.75in;
   padding: 0;
   box-shadow: none;
+  margin-top: 0;
 }
 
 #proposal #scope .document-logo,
@@ -247,7 +248,12 @@ span.entered-data {
 }
 
 div#secondary-navbar-trigger-container {
-  text-align: end;
+  text-align: start;
+}
+
+#secondary-navbar-trigger-container .btn {
+  display: block;
+  margin-bottom: 5px;
 }
 
 /* import bootstrap to set changes */

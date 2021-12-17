@@ -6,11 +6,11 @@ import Contract from "../Documents/Contract";
 import Invoice from "../Documents/Invoice";
 import Proposal from "../Documents/Proposal";
 import ScopeOfWork from "../Documents/ScopeOfWork";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import {
-//   faFileDownload,
-//   faClipboardCheck,
-// } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFileDownload,
+  faClipboardCheck,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function Primary(props) {
   const { currentDocument, setCurrentDocument } = props;
@@ -168,8 +168,8 @@ export default function Primary(props) {
 
     // Good
     return (
-      <Button variant="light" className="py-2 px-3">
-        Download
+      <Button variant="primary" className="text-white rounded-0 py-2 px-3 mt-4">
+        <FontAwesomeIcon icon={faFileDownload} />
       </Button>
     ); // eslint-disable-line max-len
   }, []);
@@ -225,47 +225,34 @@ export default function Primary(props) {
             </Nav.Link>
           </Nav.Item>
         </Nav>
-        <Nav
-          className={`justify-content-center shadow bg-dark py-3 mb-0 ${
-            showSecondaryNav && "d-none"
-          }`}
-        >
-          <Nav.Item className="mx-2">
-            <ReactToPrint
-              content={reactToPrintContent}
-              documentTitle="AwesomeFileName"
-              onAfterPrint={handleAfterPrint}
-              onBeforeGetContent={handleOnBeforeGetContent}
-              onBeforePrint={handleBeforePrint}
-              removeAfterPrint
-              trigger={ReactToPrintTrigger}
-              pageStyle={pageStyle}
-            />
-          </Nav.Item>
-          <Nav.Item className="mx-2">
-            <Button id="copy-document" variant="light" className="py-2 px-3">
-              Copy Text
-            </Button>
-          </Nav.Item>
-          <Nav.Item className="mx-2">
-            <Button id="copy-document" variant="light" className="py-2 px-3">
-              Email
-            </Button>
-          </Nav.Item>
-          <Nav.Item className="mx-2">
-            <Button id="copy-document" variant="light" className="py-2 px-3">
-              Link to Document
-            </Button>
-          </Nav.Item>
-        </Nav>
-        <div id="secondary-navbar-trigger-container">
+        <div id="secondary-navbar-trigger-container" className="">
+          <ReactToPrint
+            content={reactToPrintContent}
+            documentTitle="AwesomeFileName"
+            onAfterPrint={handleAfterPrint}
+            onBeforeGetContent={handleOnBeforeGetContent}
+            onBeforePrint={handleBeforePrint}
+            removeAfterPrint
+            trigger={ReactToPrintTrigger}
+            pageStyle={pageStyle}
+          />
           <Button
-            className="rounded-0 text-right text-white ml-auto"
-            onClick={(e) => {
-              setShowSecondaryNav(!showSecondaryNav);
-            }}
+            variant="primary"
+            className="text-white rounded-0 py-2 px-3 mt-0"
           >
-            +
+            <FontAwesomeIcon icon={faFileDownload} />
+          </Button>
+          <Button
+            variant="primary"
+            className="text-white rounded-0 py-2 px-3 mt-0"
+          >
+            <FontAwesomeIcon icon={faFileDownload} />
+          </Button>
+          <Button
+            variant="primary"
+            className="text-white rounded-0 py-2 px-3 mt-0"
+          >
+            <FontAwesomeIcon icon={faFileDownload} />
           </Button>
         </div>
       </div>
