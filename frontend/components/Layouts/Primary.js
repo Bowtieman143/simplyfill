@@ -10,6 +10,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFileDownload,
   faClipboardCheck,
+  faLink,
+  faEnvelope
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function Primary(props) {
@@ -53,6 +55,7 @@ export default function Primary(props) {
   const [removeStyles, setRemoveStyles] = useState(false);
   const [loading, setLoading] = useState(false);
   const [showSecondaryNav, setShowSecondaryNav] = useState(true);
+
   const componentRef = useRef(null);
 
   const handleAfterPrint = useCallback(() => {
@@ -238,21 +241,21 @@ export default function Primary(props) {
           />
           <Button
             variant="primary"
-            className="text-white rounded-0 py-2 px-3 mt-0"
+            className="text-white rounded-0 py-2 px-3 mt-0" disabled
           >
-            <FontAwesomeIcon icon={faFileDownload} />
+            <FontAwesomeIcon icon={faClipboardCheck} />
           </Button>
           <Button
             variant="primary"
-            className="text-white rounded-0 py-2 px-3 mt-0"
+            className="text-white rounded-0 py-2 px-3 mt-0" disabled
           >
-            <FontAwesomeIcon icon={faFileDownload} />
+            <FontAwesomeIcon icon={faLink} />
           </Button>
           <Button
             variant="primary"
-            className="text-white rounded-0 py-2 px-3 mt-0"
+            className="text-white rounded-0 py-2 px-3 mt-0" disabled
           >
-            <FontAwesomeIcon icon={faFileDownload} />
+            <FontAwesomeIcon icon={faEnvelope} />
           </Button>
         </div>
       </div>
