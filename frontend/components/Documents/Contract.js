@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import ReactToPrint from "react-to-print";
 import Image from "next/image";
-import { Button } from "react-bootstrap";
+import { Button, Row, Col } from "react-bootstrap";
 import IdentificationOfTheParties from "../ContractSections/IdentificationOfTheParties";
 import EngagementAndServices from "../ContractSections/EngagementAndServices";
 import ServicePeriodAndTermination from "../ContractSections/ServicePeriodAndTermination";
@@ -20,6 +20,7 @@ import RecoveryOfLitigationExpenses from "../ContractSections/RecoveryOfLitigati
 import General from "../ContractSections/General";
 import Severability from "../ContractSections/Severability";
 import DocumentLogo from "../DocumentLogo";
+import SignaturePad from "react-signature-canvas";
 
 export default function Contract(props) {
   const {
@@ -38,6 +39,27 @@ export default function Contract(props) {
     currentDate,
     currentMonth,
   } = props;
+
+  const [
+    serviceProviderSignatureImageUrl,
+    setServiceProviderSignatureImageUrl,
+  ] = useState(null);
+  const [clientSignatureImageUrl, setClientSignatureImageUrl] = useState(null);
+
+  const signatureServiceProvider = useRef({});
+  const signatureClient = useRef({});
+
+  const saveServiceProviderSignature = () => {
+    setServiceProviderSignatureImageUrl(
+      signatureServiceProvider.current.getTrimmedCanvas().toDataURL("image/png")
+    );
+  };
+
+  const saveServiceClient = () => {
+    setClientSignatureImageUrl(
+      signatureClient.current.getTrimmedCanvas().toDataURL("image/png")
+    );
+  };
 
   return (
     <div id="contract-container">
@@ -86,7 +108,49 @@ export default function Contract(props) {
           <General />
           <Severability />
           <li>
-            <h4>SIGNATURES</h4>
+            <h5>SIGNATURES</h5>
+            <Row>
+              <Col>
+                {serviceProviderSignatureImageUrl ? (
+                  <img src={serviceProviderSignatureImageUrl} />
+                ) : (
+                  <>
+                    <SignaturePad
+                      ref={signatureServiceProvider}
+                      canvasProps={{
+                        className: "signatureCanvas",
+                      }}
+                    />
+                    <Button
+                      variant="primary text-white mt-3"
+                      onClick={saveServiceProviderSignature}
+                    >
+                      Save Signature
+                    </Button>
+                  </>
+                )}
+              </Col>
+              <Col>
+                {clientSignatureImageUrl ? (
+                  <img src={clientSignatureImageUrl} />
+                ) : (
+                  <>
+                    <SignaturePad
+                      ref={signatureClient}
+                      canvasProps={{
+                        className: "signatureCanvas",
+                      }}
+                    />
+                    <Button
+                      variant="primary text-white mt-3"
+                      onClick={saveServiceClient}
+                    >
+                      Save Signature
+                    </Button>
+                  </>
+                )}
+              </Col>
+            </Row>
           </li>
         </ol>
       </div>
