@@ -11,7 +11,7 @@ import {
   faFileDownload,
   faClipboardCheck,
   faLink,
-  faEnvelope
+  faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function Primary(props) {
@@ -54,7 +54,6 @@ export default function Primary(props) {
 
   const [removeStyles, setRemoveStyles] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [showSecondaryNav, setShowSecondaryNav] = useState(true);
 
   const componentRef = useRef(null);
 
@@ -79,6 +78,20 @@ export default function Primary(props) {
     return componentRef.current;
   }, [componentRef.current]);
 
+  const copyContentToClipboard = () => {
+    componentRef.current.select();
+  }
+  
+  async function copyTextToClipboard() {
+    if ('clipboard' in navigator) {
+      console.log(componentRef.current.textContent.format);
+      console.log( await navigator.clipboard.readText())
+      return await navigator.clipboard.writeText(componentRef.current.textContent);
+    } else {
+      return document.execCommand('copy', true, componentRef.current.textContent);
+    }
+  }
+
   const pageStyle = `
     @media print {
       html, body {
@@ -90,7 +103,7 @@ export default function Primary(props) {
     
     @page {
       size: auto;
-      margin: .75in;
+      margin: 1.75in;
     }
 
     @media all {
@@ -163,18 +176,11 @@ export default function Primary(props) {
   `;
 
   const ReactToPrintTrigger = useCallback(() => {
-    // NOTE: could just as easily return <SomeComponent />. Do NOT pass an `onClick` prop
-    // to the root node of the returned component as it will be overwritten.
-
-    // Bad: the `onClick` here will be overwritten by `react-to-print`
-    // return <button onClick={() => alert('This will not work')}>Print this out!</button>;
-
-    // Good
     return (
       <Button variant="primary" className="text-white rounded-0 py-2 px-3 mt-4">
         <FontAwesomeIcon icon={faFileDownload} />
       </Button>
-    ); // eslint-disable-line max-len
+    );
   }, []);
 
   return (
@@ -241,19 +247,22 @@ export default function Primary(props) {
           />
           <Button
             variant="primary"
-            className="text-white rounded-0 py-2 px-3 mt-0" disabled
+            className="text-white rounded-0 py-2 px-3 mt-0"
+            onClick={copyTextToClipboard}
           >
             <FontAwesomeIcon icon={faClipboardCheck} />
           </Button>
           <Button
             variant="primary"
-            className="text-white rounded-0 py-2 px-3 mt-0" disabled
+            className="text-white rounded-0 py-2 px-3 mt-0"
+            disabled
           >
             <FontAwesomeIcon icon={faLink} />
           </Button>
           <Button
             variant="primary"
-            className="text-white rounded-0 py-2 px-3 mt-0" disabled
+            className="text-white rounded-0 py-2 px-3 mt-0"
+            disabled
           >
             <FontAwesomeIcon icon={faEnvelope} />
           </Button>
