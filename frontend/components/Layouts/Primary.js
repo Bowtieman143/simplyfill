@@ -114,7 +114,6 @@ export default function Primary(props) {
     }
 
     @media all {
-
       #contract ol {
         counter-reset: item;
         padding-left: 2.9rem;
@@ -171,7 +170,6 @@ export default function Primary(props) {
       
       #contract ol ol ol ol ul p:before,
       #contract ol ul.dotted-list li p::before {
-        background-color: red;
         counter-increment: none;
         position: static;
         content: none;

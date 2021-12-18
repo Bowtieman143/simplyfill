@@ -60,7 +60,7 @@ export default function ScopeOfWork(props) {
               </thead>
               <tbody>
                 {projectPhases.map((projectPhase, index) => (
-                  <tr>
+                  <tr key={`${projectPhase.date}-${index}`}>
                     <td>Phase {index}</td>
                     <td>{projectPhase.description}</td>
                     <td>{projectPhase.date}</td>
