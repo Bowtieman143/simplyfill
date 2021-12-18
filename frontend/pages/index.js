@@ -18,6 +18,7 @@ export default function Index() {
   const [contractEndDate, setContractEndDate] = useState("");
   const [selectedServices, setSelectedServices] = useState([]);
   const [selectedSubServices, setSelectedSubServices] = useState([]);
+  const [projectPhases, setProjectPhases] = useState([])
   const [selectedRetainerSubServices, setSelectedRetainerSubServices] =
     useState([]);
   const [services, setServices] = useState([
@@ -114,6 +115,8 @@ export default function Index() {
             setPaymentOption={setPaymentOption}
             retainerPrice={retainerPrice}
             setRetainerPrice={setRetainerPrice}
+            projectPhases={projectPhases}
+            setProjectPhases={setProjectPhases}
           />
           <Primary
             currentDocument={currentDocument}
@@ -130,6 +133,7 @@ export default function Index() {
             projectPrice={projectPrice}
             paymentOption={paymentOption}
             retainerPrice={retainerPrice}
+            projectPhases={projectPhases}
           />
         </Row>
       </Container>

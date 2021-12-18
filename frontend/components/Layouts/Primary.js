@@ -50,6 +50,7 @@ export default function Primary(props) {
     selectedRetainerSubServices,
     contractStartDate,
     contractEndDate,
+    projectPhases,
   } = props;
 
   const [removeStyles, setRemoveStyles] = useState(false);
@@ -80,15 +81,21 @@ export default function Primary(props) {
 
   const copyContentToClipboard = () => {
     componentRef.current.select();
-  }
-  
+  };
+
   async function copyTextToClipboard() {
-    if ('clipboard' in navigator) {
+    if ("clipboard" in navigator) {
       console.log(componentRef.current.textContent.format);
-      console.log( await navigator.clipboard.readText())
-      return await navigator.clipboard.writeText(componentRef.current.textContent);
+      console.log(await navigator.clipboard.readText());
+      return await navigator.clipboard.writeText(
+        componentRef.current.textContent
+      );
     } else {
-      return document.execCommand('copy', true, componentRef.current.textContent);
+      return document.execCommand(
+        "copy",
+        true,
+        componentRef.current.textContent
+      );
     }
   }
 
@@ -290,6 +297,7 @@ export default function Primary(props) {
             selectedRetainerSubServices={selectedRetainerSubServices}
             contractStartDate={contractStartDate}
             contractEndDate={contractEndDate}
+            projectPhases={projectPhases}
           />
         )}
 
@@ -302,7 +310,13 @@ export default function Primary(props) {
         )}
 
         {currentDocument === "scopeOfWork" && (
-          <ScopeOfWork businessName={businessName} />
+          <ScopeOfWork
+            businessName={businessName}
+            currentDate={currentDate}
+            projectName={projectName}
+            businessAddress={businessAddress}
+            projectPhases={projectPhases}
+          />
         )}
 
         {currentDocument === "contract" && (

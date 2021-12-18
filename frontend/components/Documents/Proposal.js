@@ -19,13 +19,20 @@ export default function Proposal(props) {
     contractEndDate,
     currentDate,
     currentMonth,
+    projectPhases,
   } = props;
 
   return (
     <div id="proposal-container">
       <div id="proposal">
         <DocumentLogo />
-        <ScopeOfWork businessName={businessName} />
+        <ScopeOfWork
+          businessName={businessName}
+          currentDate={currentDate}
+          projectName={projectName}
+          businessAddress={businessAddress}
+          projectPhases={projectPhases}
+        />
 
         <h4 className="fw-bold mt-5 mb-3">Pricing / Costs</h4>
 

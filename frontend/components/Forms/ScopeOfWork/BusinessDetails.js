@@ -14,7 +14,7 @@ export default function BusinessDetails(props) {
   } = props;
 
   return (
-    <Form>
+    <Form className="mb-5">
       <h6 className="mb-3">Business Details</h6>
       <Row className="mb-3">
         <Form.Group as={Col} controlId="formprojectname">

@@ -5,6 +5,7 @@ import FeesForServicesPerformed from "../Forms/Contract/FeesForServicesPerformed
 import IdentificationOfTheParties from "../Forms/Contract/IdentificationOfTheParties";
 import ServicePeriodAndTermination from "../Forms/Contract/ServicePeriodAndTermination";
 import BusinessDetails from "../Forms/ScopeOfWork/BusinessDetails";
+import TimelinePhases from "../Forms/ScopeOfWork/TimelinePhases";
 
 export default function Secondary(props) {
   const {
@@ -35,6 +36,8 @@ export default function Secondary(props) {
     setContractStartDate,
     contractEndDate,
     setContractEndDate,
+    projectPhases,
+    setProjectPhases,
   } = props;
 
   const [contractCarouselIndex, setContractCarouselIndex] = useState(0);
@@ -172,7 +175,20 @@ export default function Secondary(props) {
               />
             </Carousel.Item>
             <Carousel.Item>
-              <h1>Hellow thisi s a test here</h1>
+              <TimelinePhases
+                projectName={projectName}
+                setProjectName={setProjectName}
+                businessName={businessName}
+                setBusinessName={setBusinessName}
+                businessAddress={businessAddress}
+                setBusinessAddress={setBusinessAddress}
+                services={services}
+                setServices={setServices}
+                selectedServices={selectedServices}
+                setSelectedServices={setSelectedServices}
+                projectPhases={projectPhases}
+                setProjectPhases={setProjectPhases}
+              />
             </Carousel.Item>
             <Carousel.Item>
               <h1>Hellow thisi s a test here</h1>

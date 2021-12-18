@@ -1,9 +1,21 @@
+import { useEffect } from "react";
 import Image from "next/image";
 import { Row, Col, Table } from "react-bootstrap";
 import DocumentLogo from "../DocumentLogo";
 
 export default function ScopeOfWork(props) {
-  const { businessName } = props;
+  const {
+    businessName,
+    currentDate,
+    projectName,
+    businessAddress,
+    projectPhases,
+  } = props;
+
+  useEffect(() => {
+    console.log(projectPhases);
+  }, []);
+
   return (
     <div id="scope-container">
       <div id="scope">
@@ -13,11 +25,11 @@ export default function ScopeOfWork(props) {
             <h6>
               {" "}
               Name of Company:{" "}
-              <span className="entered-data fw-normal">Steven Peralta</span>
+              <span className="entered-data fw-normal">{businessName}</span>
             </h6>
             <h6>
               Project Name:{" "}
-              <span className="entered-data fw-normal">Steven Peralta</span>
+              <span className="entered-data fw-normal">{projectName}</span>
             </h6>
             <h6>
               Project Manager:{" "}
@@ -29,7 +41,7 @@ export default function ScopeOfWork(props) {
             </h6>
             <h6>
               Date:{" "}
-              <span className="entered-data fw-normal">Steven Peralta</span>
+              <span className="entered-data fw-normal">{currentDate}</span>
             </h6>
           </Col>
         </Row>
@@ -47,98 +59,13 @@ export default function ScopeOfWork(props) {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>One</td>
-                  <td>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry&apos;s
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book. It has survived not only five centuries,
-                    but also the leap into electronic typesetting, remaining
-                    essentially unchanged.
-                  </td>
-                  <td>12/03/2022</td>
-                </tr>
-                <tr>
-                  <td>Two</td>
-                  <td>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry&apos;s
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scram.
-                  </td>
-                  <td>12/03/2022</td>
-                </tr>
-                <tr>
-                  <td>Three</td>
-                  <td>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry&apos;s
-                    standard dummy text ever since the 1500s.
-                  </td>
-                  <td>12/03/2022</td>
-                </tr>
-                <tr>
-                  <td>Four</td>
-                  <td>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry&apos;s
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book. It has survived not only five centuries,
-                    but also the leap into electronic typesetting.
-                  </td>
-                  <td>12/03/2022</td>
-                </tr>
-                <tr>
-                  <td>Four</td>
-                  <td>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry&apos;s
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book. It has survived not only five centuries,
-                    but also the leap into electronic typesetting.
-                  </td>
-                  <td>12/03/2022</td>
-                </tr>
-                <tr>
-                  <td>Four</td>
-                  <td>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry&apos;s
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book. It has survived not only five centuries,
-                    but also the leap into electronic typesetting.
-                  </td>
-                  <td>12/03/2022</td>
-                </tr>
-                <tr>
-                  <td>Four</td>
-                  <td>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry&apos;s
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book. It has survived not only five centuries,
-                    but also the leap into electronic typesetting.
-                  </td>
-                  <td>12/03/2022</td>
-                </tr>
-                <tr>
-                  <td>Four</td>
-                  <td>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry&apos;s
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book. It has survived not only five centuries,
-                    but also the leap into electronic typesetting.
-                  </td>
-                  <td>12/03/2022</td>
-                </tr>
+                {projectPhases.map((projectPhase, index) => (
+                  <tr>
+                    <td>Phase {index}</td>
+                    <td>{projectPhase.description}</td>
+                    <td>{projectPhase.date}</td>
+                  </tr>
+                ))}
               </tbody>
             </Table>
           </Col>
